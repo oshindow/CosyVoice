@@ -26,7 +26,8 @@ import torch
 import numpy as np
 from cosyvoice.utils.file_utils import load_wav
 
-
+import pyaudio
+import wave
 def main():
     with grpc.insecure_channel("{}:{}".format(args.host, args.port)) as channel:
         stub = cosyvoice_pb2_grpc.CosyVoiceStub(channel)
@@ -58,6 +59,9 @@ def main():
             instruct_request.tts_text = args.tts_text
             instruct_request.spk_id = args.spk_id
             instruct_request.instruct_text = args.instruct_text
+            prompt_speech = load_wav(args.prompt_audio, 16000)
+            instruct_request.prompt_audio = (prompt_speech.numpy() * (2**15)).astype(np.int16).tobytes()
+            # instruct_request.prompt_text = args.prompt_text
             request.instruct_request.CopyFrom(instruct_request)
 
         response = stub.Inference(request)
@@ -69,6 +73,32 @@ def main():
         torchaudio.save(args.tts_wav, tts_speech, target_sr)
         logging.info('get response')
 
+def stream_play(response, args):
+    p = pyaudio.PyAudio()
+    audio_format = pyaudio.paInt16  # Assuming 16-bit PCM format
+    stream = p.open(
+        format=audio_format, channels=1, rate=22050, output=True
+    )
+
+    wf = wave.open(f"{args.tts_wav}", "wb")
+    wf.setnchannels(1)
+    wf.setsampwidth(p.get_sample_size(audio_format))
+    wf.setframerate(22050)
+
+    stream_stopped_flag = False
+    try:
+        for chunk in response.iter_content(chunk_size=1024):
+            if chunk:
+                stream.write(chunk)
+                wf.writeframesraw(chunk)
+            else:
+                if not stream_stopped_flag:
+                    stream.stop_stream()
+                    stream_stopped_flag = True
+    finally:
+        stream.close()
+        p.terminate()
+        wf.close()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -84,16 +114,16 @@ if __name__ == "__main__":
                         help='request mode')
     parser.add_argument('--tts_text',
                         type=str,
-                        default='你好，我是通义千问语音合成大模型，请问有什么可以帮您的吗？')
+                        default='Your phoneme sequence was almost correct, but there was a small error. You pronounced 瓜 instead of 光. The difference lies in the ending nasal sound; 光 requires a back nasal sound, where your tongue should touch the soft palate. Please practice this back nasal sound to improve your pronunciation accuracy.')
     parser.add_argument('--spk_id',
                         type=str,
-                        default='中文女')
+                        default='中文男')
     parser.add_argument('--prompt_text',
                         type=str,
-                        default='希望你以后能够做的比我还好呦。')
-    parser.add_argument('--prompt_wav',
+                        default='Thanks. That means a lot.')
+    parser.add_argument('--prompt_audio',
                         type=str,
-                        default='../../../zero_shot_prompt.wav')
+                        default='../../../loona_trim.wav')
     parser.add_argument('--instruct_text',
                         type=str,
                         default='Theo \'Crimson\', is a fiery, passionate rebel leader. \

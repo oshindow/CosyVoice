@@ -20,8 +20,8 @@ from torch.nn.utils.rnn import pad_sequence, unpad_sequence
 from cosyvoice.utils.common import IGNORE_ID
 from cosyvoice.transformer.label_smoothing_loss import LabelSmoothingLoss
 from cosyvoice.utils.common import th_accuracy
-
-
+import time
+import logging
 class TransformerLM(torch.nn.Module):
     def __init__(
             self,
@@ -173,23 +173,30 @@ class TransformerLM(torch.nn.Module):
         text = self.text_embedding(text)
 
         # 1. encode text
+        start_encode_text = time.time()
         text, text_len = self.encode(text, text_len)
-
+        end_encode_text = time.time()
+        
         # 2. encode embedding
+        start_embedding = time.time()
         if embedding.shape[0] != 0:
-            embedding = F.normalize(embedding, dim=1)
-            embedding = self.spk_embed_affine_layer(embedding)
-            embedding = embedding.unsqueeze(dim=1)
+           embedding = F.normalize(embedding, dim=1)
+           embedding = self.spk_embed_affine_layer(embedding)
+           embedding = embedding.unsqueeze(dim=1)
         else:
             embedding = torch.zeros(1, 0, self.llm_input_size, dtype=text.dtype).to(device).to(text.dtype)
-
+        end_embedding = time.time()
         # 3. concat llm_input
         sos_eos_emb = self.llm_embedding.weight[self.sos_eos].reshape(1, 1, -1)
         task_id_emb = self.llm_embedding.weight[self.task_id].reshape(1, 1, -1)
+
+        start_prompt_speech_token = time.time()
         if prompt_speech_token_len != 0:
-            prompt_speech_token_emb = self.speech_embedding(prompt_speech_token)
+           prompt_speech_token_emb = self.speech_embedding(prompt_speech_token)
         else:
+            #print('using transformerLM')
             prompt_speech_token_emb = torch.zeros(1, 0, self.llm_input_size, dtype=text.dtype).to(device)
+        end_prompt_speech_token = time.time()
         lm_input = torch.concat([sos_eos_emb, embedding, text, task_id_emb, prompt_speech_token_emb], dim=1)
 
         # 4. cal min/max_length
@@ -197,6 +204,7 @@ class TransformerLM(torch.nn.Module):
         max_len = int((text_len - prompt_text_len) * max_token_text_ratio)
 
         # 5. step by step decode
+        start_decode = time.time()
         out_tokens = []
         offset = 0
         att_cache, cnn_cache = torch.zeros((0, 0, 0, 0), device=lm_input.device), torch.zeros((0, 0, 0, 0), device=lm_input.device)
@@ -217,7 +225,8 @@ class TransformerLM(torch.nn.Module):
             out_tokens.append(top_ids)
             offset += lm_input.size(1)
             lm_input = self.speech_embedding.weight[top_ids].reshape(1, 1, -1)
-
+        end_decode = time.time()
+        logging.info(f" encode text: {end_encode_text - start_encode_text}, embedding {end_embedding - start_embedding}, prompt speech {end_prompt_speech_token - start_prompt_speech_token}, decode {end_decode - start_decode}")
 
 class Qwen2Encoder(torch.nn.Module):
     def __init__(self, pretrain_path):

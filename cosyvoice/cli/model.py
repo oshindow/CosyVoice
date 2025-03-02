@@ -89,7 +89,12 @@ class CosyVoiceModel:
         if self.flow.decoder.estimator_engine is None:
             raise ValueError('failed to load trt {}'.format(flow_decoder_estimator_model))
         self.flow.decoder.estimator = self.flow.decoder.estimator_engine.create_execution_context()
-
+        for i in range(self.flow.decoder.estimator_engine.num_io_tensors):
+            tensor_name = self.flow.decoder.estimator_engine.get_tensor_name(i)
+            print(f"Binding {i}: Name = {tensor_name}, Shape = {self.flow.decoder.estimator_engine.get_tensor_shape(tensor_name)}")
+            # if self.flow.decoder.estimator_engine.num_optimization_profiles > 0:
+            #     print(f"Binding {tensor_name} 是 shape binding，说明该引擎可能是动态形态。")
+    
     def llm_job(self, text, prompt_text, llm_prompt_speech_token, llm_embedding, uuid):
         with self.llm_context:
             for i in self.llm.inference(text=text.to(self.device),
@@ -148,18 +153,23 @@ class CosyVoiceModel:
             flow_prompt_speech_token=torch.zeros(1, 0, dtype=torch.int32),
             prompt_speech_feat=torch.zeros(1, 0, 80), stream=False, speed=1.0, **kwargs):
         # this_uuid is used to track variables related to this inference thread
+        start_lock = time.time()
         this_uuid = str(uuid.uuid1())
         with self.lock:
             self.tts_speech_token_dict[this_uuid], self.llm_end_dict[this_uuid] = [], False
             self.hift_cache_dict[this_uuid] = None
             self.mel_overlap_dict[this_uuid] = torch.zeros(1, 80, 0)
             self.flow_cache_dict[this_uuid] = torch.zeros(1, 80, 0, 2)
+        end_lock = time.time()
         p = threading.Thread(target=self.llm_job, args=(text, prompt_text, llm_prompt_speech_token, llm_embedding, this_uuid))
         p.start()
+        start_llm = time.time()
         if stream is True:
             token_hop_len = self.token_min_hop_len
+            start_stream = time.time()
             while True:
-                time.sleep(0.1)
+                time.sleep(0.01)
+                start_time = time.time()
                 if len(self.tts_speech_token_dict[this_uuid]) >= token_hop_len + self.token_overlap_len:
                     this_tts_speech_token = torch.tensor(self.tts_speech_token_dict[this_uuid][:token_hop_len + self.token_overlap_len]) \
                         .unsqueeze(dim=0)
@@ -169,15 +179,22 @@ class CosyVoiceModel:
                                                      embedding=flow_embedding,
                                                      uuid=this_uuid,
                                                      finalize=False)
+                    
+                    print("cost time:", time.time() - start_time)
                     yield {'tts_speech': this_tts_speech.cpu()}
+
                     with self.lock:
+                        # print('using lock')
                         self.tts_speech_token_dict[this_uuid] = self.tts_speech_token_dict[this_uuid][token_hop_len:]
                     # increase token_hop_len for better speech quality
                     token_hop_len = min(self.token_max_hop_len, int(token_hop_len * self.stream_scale_factor))
                 if self.llm_end_dict[this_uuid] is True and len(self.tts_speech_token_dict[this_uuid]) < token_hop_len + self.token_overlap_len:
                     break
+            end_stream = time.time()
             p.join()
+            end_llm = time.time()
             # deal with remain tokens, make sure inference remain token len equals token_hop_len when cache_speech is not None
+            start_remain = time.time()
             this_tts_speech_token = torch.tensor(self.tts_speech_token_dict[this_uuid]).unsqueeze(dim=0)
             this_tts_speech = self.token2wav(token=this_tts_speech_token,
                                              prompt_token=flow_prompt_speech_token,
@@ -186,6 +203,8 @@ class CosyVoiceModel:
                                              uuid=this_uuid,
                                              finalize=True)
             yield {'tts_speech': this_tts_speech.cpu()}
+            end_remain = time.time()
+            print(f"lock {end_lock - start_lock}, llm {end_llm - start_llm}, stream {end_stream - start_stream}, remain {end_remain - start_remain}")
         else:
             # deal with all tokens
             p.join()
@@ -273,7 +292,7 @@ class CosyVoice2Model(CosyVoiceModel):
         self.fp16 = fp16
         self.llm.fp16 = fp16
         self.flow.fp16 = fp16
-        self.token_hop_len = 2 * self.flow.input_frame_rate
+        self.token_hop_len = 1 * self.flow.input_frame_rate
         # here we fix flow encoder/decoder decoding_chunk_size, in the future we will send it as arguments, or use cache
         self.flow.encoder.static_chunk_size = 2 * self.flow.input_frame_rate
         self.flow.decoder.estimator.static_chunk_size = 2 * self.flow.input_frame_rate * self.flow.token_mel_ratio
@@ -344,7 +363,7 @@ class CosyVoice2Model(CosyVoiceModel):
         if stream is True:
             token_offset = 0
             while True:
-                time.sleep(0.1)
+                time.sleep(0.01)
                 if len(self.tts_speech_token_dict[this_uuid]) - token_offset >= self.token_hop_len + self.flow.pre_lookahead_len:
                     this_tts_speech_token = torch.tensor(self.tts_speech_token_dict[this_uuid][:token_offset + self.token_hop_len + self.flow.pre_lookahead_len]).unsqueeze(dim=0)
                     this_tts_speech = self.token2wav(token=this_tts_speech_token,

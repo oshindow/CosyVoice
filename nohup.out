@@ -1,0 +1,268 @@
+Unknown option: -U
+usage: python3 [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Try `python -h' for more information.
+failed to import ttsfrd, use WeTextProcessing instead
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+2025-01-13 10:35:27,149 INFO input frame rate=25
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:28: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+/data/codes/CosyVoice/cosyvoice/dataset/processor.py:24: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+  torchaudio.set_audio_backend('soundfile')
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py:115: UserWarning: Specified provider 'CUDAExecutionProvider' is not in available provider names.Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
+  warnings.warn(
+2025-01-13 10:35:29,464 WETEXT INFO building fst for zh_normalizer ...
+2025-01-13 10:35:29,464 INFO building fst for zh_normalizer ...
+2025-01-13 10:36:04,251 WETEXT INFO done
+2025-01-13 10:36:04,251 INFO done
+2025-01-13 10:36:04,251 WETEXT INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-01-13 10:36:04,251 INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-01-13 10:36:04,251 WETEXT INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-01-13 10:36:04,251 INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-01-13 10:36:04,257 WETEXT INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-01-13 10:36:04,257 INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-01-13 10:36:04,257 WETEXT INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-01-13 10:36:04,257 INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-01-13 10:36:04,257 WETEXT INFO skip building fst for en_normalizer ...
+2025-01-13 10:36:04,257 INFO skip building fst for en_normalizer ...
+2025-01-13 10:36:08,487 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-01-13 10:36:08,488 DEBUG Starting new HTTPS connection (1): checkip.amazonaws.com:443
+/data/codes/CosyVoice/webui.py:152: GradioDeprecationWarning: 'scale' value should be an integer. Using 0.5 will cause issues.
+  instruction_text = gr.Text(label="操作步骤", value=instruct_dict[inference_mode_list[0]], scale=0.5)
+/data/codes/CosyVoice/webui.py:153: GradioDeprecationWarning: 'scale' value should be an integer. Using 0.25 will cause issues.
+  sft_dropdown = gr.Dropdown(choices=sft_spk, label='选择预训练音色', value=sft_spk[0] if len(sft_spk) != 0 else '', scale=0.25)
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/components/dropdown.py:231: UserWarning: The value passed into gr.Dropdown() is not in the list of choices. Please update the list of choices to include:  or set allow_custom_value=True.
+  warnings.warn(
+/data/codes/CosyVoice/webui.py:156: GradioDeprecationWarning: 'scale' value should be an integer. Using 0.25 will cause issues.
+  with gr.Column(scale=0.25):
+/data/codes/CosyVoice/webui.py:162: GradioUnusedKwargWarning: You have unused kwarg parameters in Audio, please remove them: {'sources': 'upload'}
+  prompt_wav_upload = gr.Audio(sources='upload', type='filepath', label='选择prompt音频文件，注意采样率不低于16khz')
+/data/codes/CosyVoice/webui.py:163: GradioUnusedKwargWarning: You have unused kwarg parameters in Audio, please remove them: {'sources': 'microphone'}
+  prompt_wav_record = gr.Audio(sources='microphone', type='filepath', label='录制prompt音频文件')
+2025-01-13 10:36:08,494 DEBUG Using selector: EpollSelector
+2025-01-13 10:36:08,850 DEBUG Using selector: EpollSelector
+Running on local URL:  http://0.0.0.0:7060
+2025-01-13 10:36:08,858 DEBUG Starting new HTTP connection (1): localhost:7060
+2025-01-13 10:36:08,860 DEBUG http://localhost:7060 "GET /startup-events HTTP/11" 200 5
+2025-01-13 10:36:08,862 DEBUG Starting new HTTP connection (1): localhost:7060
+2025-01-13 10:36:08,873 DEBUG http://localhost:7060 "HEAD / HTTP/11" 200 0
+2025-01-13 10:36:08,874 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-01-13 10:36:08,996 DEBUG https://checkip.amazonaws.com:443 "GET / HTTP/11" 200 14
+2025-01-13 10:36:08,997 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-01-13 10:36:09,446 DEBUG https://api.gradio.app:443 "GET /pkg-version HTTP/11" 200 21
+IMPORTANT: You are using gradio version 3.50.0, however version 4.44.1 is available, please upgrade.
+--------
+2025-01-13 10:36:09,599 DEBUG https://api.gradio.app:443 "GET /v2/tunnel-request HTTP/11" 200 None
+2025-01-13 10:36:09,881 DEBUG https://api.gradio.app:443 "POST /gradio-initiated-analytics/ HTTP/11" 200 None
+Running on public URL: https://ee74b32cf6b37c1cd0.gradio.live
+
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades, run `gradio deploy` from Terminal to deploy to Spaces (https://huggingface.co/spaces)
+2025-01-13 10:36:10,204 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-01-13 10:36:11,088 DEBUG https://api.gradio.app:443 "POST /gradio-launched-telemetry/ HTTP/11" 200 None
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/processing_utils.py:183: UserWarning: Trying to convert audio automatically from float64 to 16-bit int format.
+  warnings.warn(warning.format(data.dtype))
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/processing_utils.py:184: RuntimeWarning: invalid value encountered in divide
+  data = data / np.abs(data).max()
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/processing_utils.py:186: RuntimeWarning: invalid value encountered in cast
+  data = data.astype(np.int16)
+2025-01-13 11:12:40,533 INFO get sft inference request
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/queueing.py", line 407, in call_prediction
+    output = await route_utils.call_process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/route_utils.py", line 226, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/blocks.py", line 1550, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/blocks.py", line 1199, in call_function
+    prediction = await utils.async_iteration(iterator)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 519, in async_iteration
+    return await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 512, in __anext__
+    return await anyio.to_thread.run_sync(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 495, in run_sync_iterator_async
+    return next(iterator)
+           ^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 649, in gen_wrapper
+    yield from f(*args, **kwargs)
+  File "/data/codes/CosyVoice/webui.py", line 118, in generate_audio
+    for i in cosyvoice.inference_sft(tts_text, sft_dropdown, stream=stream, speed=speed):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/codes/CosyVoice/cosyvoice/cli/cosyvoice.py", line 65, in inference_sft
+    model_input = self.frontend.frontend_sft(i, spk_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/codes/CosyVoice/cosyvoice/cli/frontend.py", line 137, in frontend_sft
+    embedding = self.spk2info[spk_id]['embedding']
+                ~~~~~~~~~~~~~^^^^^^^^
+KeyError: ''
+2025-01-13 11:13:39,625 INFO get sft inference request
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/queueing.py", line 407, in call_prediction
+    output = await route_utils.call_process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/route_utils.py", line 226, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/blocks.py", line 1550, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/blocks.py", line 1199, in call_function
+    prediction = await utils.async_iteration(iterator)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 519, in async_iteration
+    return await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 512, in __anext__
+    return await anyio.to_thread.run_sync(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 495, in run_sync_iterator_async
+    return next(iterator)
+           ^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 649, in gen_wrapper
+    yield from f(*args, **kwargs)
+  File "/data/codes/CosyVoice/webui.py", line 118, in generate_audio
+    for i in cosyvoice.inference_sft(tts_text, sft_dropdown, stream=stream, speed=speed):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/codes/CosyVoice/cosyvoice/cli/cosyvoice.py", line 65, in inference_sft
+    model_input = self.frontend.frontend_sft(i, spk_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/codes/CosyVoice/cosyvoice/cli/frontend.py", line 137, in frontend_sft
+    embedding = self.spk2info[spk_id]['embedding']
+                ~~~~~~~~~~~~~^^^^^^^^
+KeyError: ''
+2025-01-13 11:13:47,222 INFO get sft inference request
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/queueing.py", line 407, in call_prediction
+    output = await route_utils.call_process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/route_utils.py", line 226, in call_process_api
+    output = await app.get_blocks().process_api(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/blocks.py", line 1550, in process_api
+    result = await self.call_function(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/blocks.py", line 1199, in call_function
+    prediction = await utils.async_iteration(iterator)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 519, in async_iteration
+    return await iterator.__anext__()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 512, in __anext__
+    return await anyio.to_thread.run_sync(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 495, in run_sync_iterator_async
+    return next(iterator)
+           ^^^^^^^^^^^^^^
+  File "/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/utils.py", line 649, in gen_wrapper
+    yield from f(*args, **kwargs)
+  File "/data/codes/CosyVoice/webui.py", line 118, in generate_audio
+    for i in cosyvoice.inference_sft(tts_text, sft_dropdown, stream=stream, speed=speed):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/codes/CosyVoice/cosyvoice/cli/cosyvoice.py", line 65, in inference_sft
+    model_input = self.frontend.frontend_sft(i, spk_id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/codes/CosyVoice/cosyvoice/cli/frontend.py", line 137, in frontend_sft
+    embedding = self.spk2info[spk_id]['embedding']
+                ~~~~~~~~~~~~~^^^^^^^^
+KeyError: ''
+failed to import ttsfrd, use WeTextProcessing instead
+2025-03-01 12:06:31,543 INFO load cosyvoice2: load_jit False, load_trt True, fp16 False
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+2025-03-01 12:06:37,564 INFO input frame rate=25
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:28: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+/data/codes/CosyVoice/cosyvoice/dataset/processor.py:24: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+  torchaudio.set_audio_backend('soundfile')
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py:115: UserWarning: Specified provider 'CUDAExecutionProvider' is not in available provider names.Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
+  warnings.warn(
+2025-03-01 12:06:43,184 WETEXT INFO building fst for zh_normalizer ...
+2025-03-01 12:06:43,184 INFO building fst for zh_normalizer ...
+2025-03-01 12:07:31,392 WETEXT INFO done
+2025-03-01 12:07:31,392 INFO done
+2025-03-01 12:07:31,392 WETEXT INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-03-01 12:07:31,392 INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-03-01 12:07:31,392 WETEXT INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-03-01 12:07:31,392 INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-03-01 12:07:31,397 WETEXT INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-03-01 12:07:31,397 INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-03-01 12:07:31,397 WETEXT INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-03-01 12:07:31,397 INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-03-01 12:07:31,397 WETEXT INFO skip building fst for en_normalizer ...
+2025-03-01 12:07:31,397 INFO skip building fst for en_normalizer ...
+2025-03-01 12:07:32,713 INFO reset cosyvoice2: load_jit False, load_trt True, fp16 False
+2025-03-01 12:07:36,282 INFO load trt model
+[03/01/2025-12:07:36] [TRT] [I] Loaded engine size: 299 MiB
+[03/01/2025-12:07:39] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +2086, now: CPU 0, GPU 2358 (MiB)
+Binding 0: Name = x, Shape = (-1, 80, -1)
+Binding 1: Name = mask, Shape = (-1, 1, -1)
+Binding 2: Name = mu, Shape = (-1, 80, -1)
+Binding 3: Name = t, Shape = (-1,)
+Binding 4: Name = spks, Shape = (-1, 80)
+Binding 5: Name = cond, Shape = (-1, 80, -1)
+Binding 6: Name = estimator_out, Shape = (-1, 80, -1)
+2025-03-01 12:07:39,375 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-03-01 12:07:39,378 DEBUG Starting new HTTPS connection (1): checkip.amazonaws.com:443
+/data/codes/CosyVoice/demo_loona.py:100: GradioDeprecationWarning: 'scale' value should be an integer. Using 0.5 will cause issues.
+  instruction_text = gr.Text(label="操作步骤", value=instruct_dict[inference_mode_list[0]], scale=0.5)
+/data/codes/CosyVoice/demo_loona.py:101: GradioDeprecationWarning: 'scale' value should be an integer. Using 0.25 will cause issues.
+  sft_dropdown = gr.Dropdown(choices=sft_spk, label='选择预训练音色', value="loona" if len(sft_spk) != 0 else '', scale=0.25)
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/gradio/components/dropdown.py:231: UserWarning: The value passed into gr.Dropdown() is not in the list of choices. Please update the list of choices to include: loona or set allow_custom_value=True.
+  warnings.warn(
+/data/codes/CosyVoice/demo_loona.py:104: GradioDeprecationWarning: 'scale' value should be an integer. Using 0.25 will cause issues.
+  with gr.Column(scale=0.25):
+2025-03-01 12:07:39,383 DEBUG Using selector: EpollSelector
+2025-03-01 12:07:39,481 DEBUG Using selector: EpollSelector
+Running on local URL:  http://0.0.0.0:7050
+2025-03-01 12:07:39,491 DEBUG Starting new HTTP connection (1): localhost:7050
+2025-03-01 12:07:39,493 DEBUG http://localhost:7050 "GET /startup-events HTTP/11" 200 5
+2025-03-01 12:07:39,495 DEBUG Starting new HTTP connection (1): localhost:7050
+2025-03-01 12:07:39,521 DEBUG http://localhost:7050 "HEAD / HTTP/11" 200 0
+2025-03-01 12:07:39,522 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-03-01 12:07:40,040 DEBUG https://checkip.amazonaws.com:443 "GET / HTTP/11" 200 14
+2025-03-01 12:07:40,042 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-03-01 12:07:40,116 DEBUG https://api.gradio.app:443 "GET /pkg-version HTTP/11" 200 21
+IMPORTANT: You are using gradio version 3.50.0, however version 4.44.1 is available, please upgrade.
+--------
+2025-03-01 12:07:40,231 DEBUG https://api.gradio.app:443 "GET /v2/tunnel-request HTTP/11" 200 None
+Running on public URL: https://c129d5d8ea45618a20.gradio.live
+
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades, run `gradio deploy` from Terminal to deploy to Spaces (https://huggingface.co/spaces)
+2025-03-01 12:07:40,788 DEBUG Starting new HTTPS connection (1): api.gradio.app:443
+2025-03-01 12:07:40,841 DEBUG https://api.gradio.app:443 "POST /gradio-initiated-analytics/ HTTP/11" 200 None
+2025-03-01 12:07:41,587 DEBUG https://api.gradio.app:443 "POST /gradio-launched-telemetry/ HTTP/11" 200 None

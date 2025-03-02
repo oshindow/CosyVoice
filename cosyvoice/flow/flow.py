@@ -88,7 +88,8 @@ class MaskedDiffWithXvec(torch.nn.Module):
                 continue
             index = random.randint(0, int(0.3 * j))
             conds[i, :index] = feat[i, :index]
-        conds = conds.transpose(1, 2)
+        conds = conds.transpose(1, 2).contiguous()
+        
 
         mask = (~make_pad_mask(feat_len)).to(h)
         feat = F.interpolate(feat.unsqueeze(dim=1), size=h.shape[1:], mode="nearest").squeeze(dim=1)
@@ -114,7 +115,15 @@ class MaskedDiffWithXvec(torch.nn.Module):
         if self.fp16 is True:
             prompt_feat = prompt_feat.half()
             embedding = embedding.half()
-
+        # print("call masked diff with xvec")
+        # print(token.shape,
+        #         token_len.shape,
+        #           prompt_token.shape,
+        #           prompt_token_len.shape,
+        #           prompt_feat.shape,
+        #           prompt_feat_len.shape,
+        #           embedding.shape,
+        #           flow_cache)
         assert token.shape[0] == 1
         # xvec projection
         embedding = F.normalize(embedding, dim=1)
@@ -138,6 +147,7 @@ class MaskedDiffWithXvec(torch.nn.Module):
         conds = conds.transpose(1, 2)
 
         mask = (~make_pad_mask(torch.tensor([mel_len1 + mel_len2]))).to(h)
+        
         feat, flow_cache = self.decoder(
             mu=h.transpose(1, 2).contiguous(),
             mask=mask.unsqueeze(1),
@@ -203,7 +213,22 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
         if self.fp16 is True:
             prompt_feat = prompt_feat.half()
             embedding = embedding.half()
-
+        # print("call causalmasked diff with xvec")
+        # torch.Size([1, 203]) 
+        # torch.Size([1]) 
+        # torch.Size([1, 87]) 
+        # torch.Size([1]) 
+        # torch.Size([1, 174, 80]) 
+        # torch.Size([1]) 
+        # torch.Size([1, 192]) False
+        # print(token.shape,
+                # token_len.shape,
+                #   prompt_token.shape,
+                #   prompt_token_len,
+                #   prompt_feat.shape,
+                #   prompt_feat_len,
+                #   embedding.shape,
+                #   finalize)
         assert token.shape[0] == 1
         # xvec projection
         embedding = F.normalize(embedding, dim=1)
@@ -219,14 +244,18 @@ class CausalMaskedDiffWithXvec(torch.nn.Module):
         if finalize is False:
             h = h[:, :-self.pre_lookahead_len * self.token_mel_ratio]
         mel_len1, mel_len2 = prompt_feat.shape[1], h.shape[1] - prompt_feat.shape[1]
+        
         h = self.encoder_proj(h)
 
         # get conditions
         conds = torch.zeros([1, mel_len1 + mel_len2, self.output_size], device=token.device).to(h.dtype)
         conds[:, :mel_len1] = prompt_feat
         conds = conds.transpose(1, 2)
-
+        
         mask = (~make_pad_mask(torch.tensor([mel_len1 + mel_len2]))).to(h)
+        # print(mel_len1, mel_len2, embedding.shape, conds.shape, mask.shape)
+        # print(self.decoder.get_binding_shape(0))
+        # 174 100 torch.Size([1, 80]) torch.Size([1, 80, 274]) torch.Size([1, 274])
         feat, _ = self.decoder(
             mu=h.transpose(1, 2).contiguous(),
             mask=mask.unsqueeze(1),

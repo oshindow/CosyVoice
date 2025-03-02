@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>gRPC-Web TTS Demo</title>
+    <script src="./cosyvoice_pb.js"></script>
+    <script src="./cosyvoice_grpc_web_pb.js"></script>
+</head>
+<body>
+    <h1>gRPC-Web TTS Demo</h1>
+    <label for="tts_text">TTS Text:</label>
+    <input type="text" id="tts_text" value="床前明月光，疑是地上霜，举头望明月，低头思故乡">
+    <br>
+    <label for="instruct_text">Instruct Text:</label>
+    <input type="text" id="instruct_text" value="你能用诗朗诵的语气说吗？">
+    <br>
+    <button id="start">Start TTS</button>
+    <audio id="audio" controls></audio>
+
+    <script>
+        const client = new proto.CosyVoiceClient('http://localhost:8080');
+
+        document.getElementById('start').addEventListener('click', () => {
+            const ttsText = document.getElementById('tts_text').value;
+            const instructText = document.getElementById('instruct_text').value;
+
+            const request = new proto.Request();
+            const instructRequest = new proto.InstructRequest();
+            instructRequest.setTtsText(ttsText);
+            instructRequest.setInstructText(instructText);
+       
+            request.setInstructRequest(instructRequest);
+
+            const audioElement = document.getElementById('audio');
+            const chunks = [];
+
+            const stream = client.inference(request, {});
+            stream.on('data', (response) => {
+                chunks.push(response.getTtsAudio());
+                const blob = new Blob(chunks, { type: 'audio/wav' });
+                audioElement.src = URL.createObjectURL(blob);
+            });
+            stream.on('end', () => {
+                console.log('Stream ended');
+            });
+        });
+    </script>
+</body>
+</html>

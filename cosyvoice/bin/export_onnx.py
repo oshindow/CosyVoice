@@ -44,7 +44,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='export your model for deployment')
     parser.add_argument('--model_dir',
                         type=str,
-                        default='pretrained_models/CosyVoice-300M',
+                        default='pretrained_models/CosyVoice-300M-Instruct',
                         help='local path')
     args = parser.parse_args()
     print(args)
@@ -74,18 +74,20 @@ def main():
     torch.onnx.export(
         estimator,
         (x, mask, mu, t, spks, cond),
-        '{}/flow.decoder.estimator.fp32.onnx'.format(args.model_dir),
+        '{}/flow.decoder.estimator.fp32.4090.onnx'.format(args.model_dir),
         export_params=True,
         opset_version=18,
         do_constant_folding=True,
         input_names=['x', 'mask', 'mu', 't', 'spks', 'cond'],
         output_names=['estimator_out'],
         dynamic_axes={
-            'x': {2: 'seq_len'},
-            'mask': {2: 'seq_len'},
-            'mu': {2: 'seq_len'},
-            'cond': {2: 'seq_len'},
-            'estimator_out': {2: 'seq_len'},
+            'x': {0: "batch_size", 2: 'seq_len'},
+            'mask': {0: "batch_size", 2: 'seq_len'},
+            'mu': {0: "batch_size", 2: 'seq_len'},
+            'cond': {0: "batch_size", 2: 'seq_len'},
+            'spks': {0: "batch_size"},
+            't': {0: "batch_size"},
+            'estimator_out': {0: "batch_size", 2: 'seq_len'},
         }
     )
 

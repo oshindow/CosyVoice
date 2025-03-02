@@ -25,7 +25,7 @@ from cosyvoice.utils.class_utils import get_model_type
 
 class CosyVoice:
 
-    def __init__(self, model_dir, load_jit=False, load_trt=False, fp16=False):
+    def __init__(self, model_dir, load_jit=False, load_trt=True, fp16=False):
         self.instruct = True if '-Instruct' in model_dir else False
         self.model_dir = model_dir
         self.fp16 = fp16
@@ -53,8 +53,9 @@ class CosyVoice:
                                 '{}/llm.llm.{}.zip'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'),
                                 '{}/flow.encoder.{}.zip'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'))
         if load_trt:
-            self.model.load_trt('{}/flow.decoder.estimator.{}.v100.plan'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'))
+            self.model.load_trt('{}/flow.decoder.estimator.{}.4090.plan'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'))
         del configs
+        
 
     def list_available_spks(self):
         spks = list(self.frontend.spk2info.keys())
@@ -100,17 +101,25 @@ class CosyVoice:
         assert isinstance(self.model, CosyVoiceModel), 'inference_instruct is only implemented for CosyVoice!'
         if self.instruct is False:
             raise ValueError('{} do not support instruct inference'.format(self.model_dir))
+        start_instruct_text_norm = time.time()
         instruct_text = self.frontend.text_normalize(instruct_text, split=False, text_frontend=text_frontend)
+        end_instruct_text_norm = time.time()
         for i in tqdm(self.frontend.text_normalize(tts_text, split=True, text_frontend=text_frontend)):
+            start_frontend_instruct = time.time()
             model_input = self.frontend.frontend_instruct(i, spk_id, instruct_text)
+            end_frontend_instruct = time.time()
+
             start_time = time.time()
             logging.info('synthesis text {}'.format(i))
             for model_output in self.model.tts(**model_input, stream=stream, speed=speed):
                 speech_len = model_output['tts_speech'].shape[1] / self.sample_rate
+                end_time = time.time()
+                logging.info(f"inference instruct cost time {end_time - start_time}")
                 logging.info('yield speech len {}, rtf {}'.format(speech_len, (time.time() - start_time) / speech_len))
                 yield model_output
                 start_time = time.time()
-
+            logging.info(f"instruct_text_norm: {end_instruct_text_norm - start_instruct_text_norm}, frontend_instruct: {end_frontend_instruct - start_frontend_instruct}")
+    
     def inference_vc(self, source_speech_16k, prompt_speech_16k, stream=False, speed=1.0):
         model_input = self.frontend.frontend_vc(source_speech_16k, prompt_speech_16k, self.sample_rate)
         start_time = time.time()
@@ -123,7 +132,8 @@ class CosyVoice:
 
 class CosyVoice2(CosyVoice):
 
-    def __init__(self, model_dir, load_jit=False, load_trt=False, fp16=False):
+    def __init__(self, model_dir, load_jit=False, load_trt=True, fp16=False):
+        logging.info(f"load cosyvoice2: load_jit {load_jit}, load_trt {load_trt}, fp16 {fp16}")
         self.instruct = True if '-Instruct' in model_dir else False
         self.model_dir = model_dir
         self.fp16 = fp16
@@ -142,27 +152,79 @@ class CosyVoice2(CosyVoice):
         if torch.cuda.is_available() is False and (load_jit is True or load_trt is True or fp16 is True):
             load_jit, load_trt, fp16 = False, False, False
             logging.warning('no cuda device, set load_jit/load_trt/fp16 to False')
+
+        logging.info(f"reset cosyvoice2: load_jit {load_jit}, load_trt {load_trt}, fp16 {fp16}")
         self.model = CosyVoice2Model(configs['llm'], configs['flow'], configs['hift'], fp16)
         self.model.load('{}/llm.pt'.format(model_dir),
                         '{}/flow.pt'.format(model_dir),
                         '{}/hift.pt'.format(model_dir))
         if load_jit:
+            logging.info(f"load jit model")
             self.model.load_jit('{}/flow.encoder.{}.zip'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'))
         if load_trt:
-            self.model.load_trt('{}/flow.decoder.estimator.{}.v100.plan'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'))
+            logging.info(f"load trt model")
+            self.model.load_trt('{}/flow.decoder.estimator.{}.4090.plan'.format(model_dir, 'fp16' if self.fp16 is True else 'fp32'))
         del configs
 
-    def inference_instruct(self, *args, **kwargs):
-        raise NotImplementedError('inference_instruct is not implemented for CosyVoice2!')
+    def inference_instruct(self, tts_text, instruct_text, spk_id, stream=False, speed=1.0, text_frontend=True):
+        # logging.info(spk_id)
+        # spk_id = "中文女"
+        # assert isinstance(self.model, CosyVoiceModel), 'inference_instruct is only implemented for CosyVoice!'
+        # if self.instruct is False:
+        #     raise ValueError('{} do not support instruct inference'.format(self.model_dir))
+        start_instruct_text_norm = time.time()
+        instruct_text = self.frontend.text_normalize(instruct_text, split=False, text_frontend=text_frontend)
+        end_instruct_text_norm = time.time()
+        for i in tqdm(self.frontend.text_normalize(tts_text, split=True, text_frontend=text_frontend)):
+            start_frontend_instruct = time.time()
+            model_input = self.frontend.frontend_instruct(i, spk_id, instruct_text, cosyvoice2=True)
+            # logging.info(model_input)
+            end_frontend_instruct = time.time()
+
+            start_time = time.time()
+            logging.info('synthesis text {}'.format(i))
+            for model_output in self.model.tts(**model_input, stream=stream, speed=speed):
+                speech_len = model_output['tts_speech'].shape[1] / self.sample_rate
+                end_time = time.time()
+                logging.info(f"inference instruct cost time {end_time - start_time}")
+                logging.info('yield speech len {}, rtf {}'.format(speech_len, (time.time() - start_time) / speech_len))
+                yield model_output
+                start_time = time.time()
+            logging.info(f"instruct_text_norm: {end_instruct_text_norm - start_instruct_text_norm}, frontend_instruct: {end_frontend_instruct - start_frontend_instruct}")
 
     def inference_instruct2(self, tts_text, instruct_text, prompt_speech_16k, stream=False, speed=1.0, text_frontend=True):
         assert isinstance(self.model, CosyVoice2Model), 'inference_instruct2 is only implemented for CosyVoice2!'
+        # prompt_text = self.frontend.text_normalize(prompt_text, split=False, text_frontend=text_frontend)
         for i in tqdm(self.frontend.text_normalize(tts_text, split=True, text_frontend=text_frontend)):
             model_input = self.frontend.frontend_instruct2(i, instruct_text, prompt_speech_16k, self.sample_rate)
             start_time = time.time()
             logging.info('synthesis text {}'.format(i))
             for model_output in self.model.tts(**model_input, stream=stream, speed=speed):
                 speech_len = model_output['tts_speech'].shape[1] / self.sample_rate
+                end_time = time.time()
+                logging.info(f"inference instruct cost time {end_time - start_time}")
                 logging.info('yield speech len {}, rtf {}'.format(speech_len, (time.time() - start_time) / speech_len))
                 yield model_output
                 start_time = time.time()
+
+    def inference_instruct3(self, tts_text, instruct_text, spk_id, stream=False, speed=1.0, text_frontend=True):
+        # loona preload embeddings
+        start_instruct_text_norm = time.time()
+        instruct_text = self.frontend.text_normalize(instruct_text, split=False, text_frontend=text_frontend)
+        end_instruct_text_norm = time.time()
+        for i in tqdm(self.frontend.text_normalize(tts_text, split=True, text_frontend=text_frontend)):
+            start_frontend_instruct = time.time()
+            model_input = self.frontend.frontend_instruct(i, spk_id, instruct_text, cosyvoice2=True)
+            # logging.info(model_input)
+            end_frontend_instruct = time.time()
+
+            start_time = time.time()
+            logging.info('synthesis text {}'.format(i))
+            for model_output in self.model.tts(**model_input, stream=stream, speed=speed):
+                speech_len = model_output['tts_speech'].shape[1] / self.sample_rate
+                end_time = time.time()
+                logging.info(f"inference instruct cost time {end_time - start_time}")
+                logging.info('yield speech len {}, rtf {}'.format(speech_len, (time.time() - start_time) / speech_len))
+                yield model_output
+                start_time = time.time()
+            logging.info(f"instruct_text_norm: {end_instruct_text_norm - start_instruct_text_norm}, frontend_instruct: {end_frontend_instruct - start_frontend_instruct}")

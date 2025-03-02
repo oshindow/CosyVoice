@@ -1,0 +1,1 @@
+python3 server.py --port 50000 --max_conc 4 --model_dir /data/codes/CosyVoice/pretrained_models/CosyVoice-300M-Instruct

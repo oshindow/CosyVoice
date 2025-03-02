@@ -1,3 +1,5 @@
+// python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. cosyvoice.proto
+
 syntax = "proto3";
 
 package cosyvoice;
@@ -36,6 +38,8 @@ message instructRequest{
   string tts_text = 1;
   string spk_id = 2;
   string instruct_text = 3;
+  bytes prompt_audio = 4;
+  string prompt_text = 5;
 }
 
 message Response{

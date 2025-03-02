@@ -70,7 +70,11 @@ class CosyVoiceFrontEnd:
             self.en_tn_model = EnNormalizer()
             self.inflect_parser = inflect.engine()
 
+        self.loona_model_input = torch.load('model_input.pth')
+
     def _extract_text_token(self, text):
+        import logging
+        logging.info(f"instruct_text {text}")
         text_token = self.tokenizer.encode(text, allowed_special=self.allowed_special)
         text_token = torch.tensor([text_token], dtype=torch.int32).to(self.device)
         text_token_len = torch.tensor([text_token.shape[1]], dtype=torch.int32).to(self.device)
@@ -135,21 +139,25 @@ class CosyVoiceFrontEnd:
     def frontend_sft(self, tts_text, spk_id):
         tts_text_token, tts_text_token_len = self._extract_text_token(tts_text)
         embedding = self.spk2info[spk_id]['embedding']
+        # print("self.spk2info[spk_id]['embedding']:", embedding.shape)
         model_input = {'text': tts_text_token, 'text_len': tts_text_token_len, 'llm_embedding': embedding, 'flow_embedding': embedding}
         return model_input
 
     def frontend_zero_shot(self, tts_text, prompt_text, prompt_speech_16k, resample_rate):
         tts_text_token, tts_text_token_len = self._extract_text_token(tts_text)
         prompt_text_token, prompt_text_token_len = self._extract_text_token(prompt_text)
+        # print(prompt_speech_16k.shape)
         prompt_speech_resample = torchaudio.transforms.Resample(orig_freq=16000, new_freq=resample_rate)(prompt_speech_16k)
         speech_feat, speech_feat_len = self._extract_speech_feat(prompt_speech_resample)
         speech_token, speech_token_len = self._extract_speech_token(prompt_speech_16k)
+        
         if resample_rate == 24000:
             # cosyvoice2, force speech_feat % speech_token = 2
             token_len = min(int(speech_feat.shape[1] / 2), speech_token.shape[1])
             speech_feat, speech_feat_len[:] = speech_feat[:, :2 * token_len], 2 * token_len
             speech_token, speech_token_len[:] = speech_token[:, :token_len], token_len
         embedding = self._extract_spk_embedding(prompt_speech_16k)
+        # print("self._extract_spk_embedding:", embedding.shape)
         model_input = {'text': tts_text_token, 'text_len': tts_text_token_len,
                        'prompt_text': prompt_text_token, 'prompt_text_len': prompt_text_token_len,
                        'llm_prompt_speech_token': speech_token, 'llm_prompt_speech_token_len': speech_token_len,
@@ -157,7 +165,7 @@ class CosyVoiceFrontEnd:
                        'prompt_speech_feat': speech_feat, 'prompt_speech_feat_len': speech_feat_len,
                        'llm_embedding': embedding, 'flow_embedding': embedding}
         return model_input
-
+    
     def frontend_cross_lingual(self, tts_text, prompt_speech_16k, resample_rate):
         model_input = self.frontend_zero_shot(tts_text, '', prompt_speech_16k, resample_rate)
         # in cross lingual mode, we remove prompt in llm
@@ -167,11 +175,24 @@ class CosyVoiceFrontEnd:
         del model_input['llm_prompt_speech_token_len']
         return model_input
 
-    def frontend_instruct(self, tts_text, spk_id, instruct_text):
-        model_input = self.frontend_sft(tts_text, spk_id)
+    def frontend_instruct(self, tts_text, spk_id, instruct_text, cosyvoice2=False):
+        if spk_id == "loona":
+            print("loading loona embeddings")
+            model_input = self.loona_model_input
+            tts_text_token, tts_text_token_len = self._extract_text_token(tts_text)
+            model_input['text'] = tts_text_token
+            model_input['text_len'] = tts_text_token_len
+        else:
+            model_input = self.frontend_sft(tts_text, spk_id)
         # in instruct mode, we remove spk_embedding in llm due to information leakage
-        del model_input['llm_embedding']
-        instruct_text_token, instruct_text_token_len = self._extract_text_token(instruct_text + '<endofprompt>')
+        if 'llm_embedding' in model_input:
+            del model_input['llm_embedding']
+        if cosyvoice2:
+            instruct_text += '<|endofprompt|>'
+        else:
+            instruct_text += '<endofprompt>'
+            
+        instruct_text_token, instruct_text_token_len = self._extract_text_token(instruct_text)    
         model_input['prompt_text'] = instruct_text_token
         model_input['prompt_text_len'] = instruct_text_token_len
         return model_input
@@ -180,6 +201,7 @@ class CosyVoiceFrontEnd:
         model_input = self.frontend_zero_shot(tts_text, instruct_text + '<|endofprompt|>', prompt_speech_16k, resample_rate)
         del model_input['llm_prompt_speech_token']
         del model_input['llm_prompt_speech_token_len']
+        # torch.save(model_input, 'model_input.pth')
         return model_input
 
     def frontend_vc(self, source_speech_16k, prompt_speech_16k, resample_rate):
