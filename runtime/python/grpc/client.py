@@ -114,7 +114,7 @@ if __name__ == "__main__":
                         help='request mode')
     parser.add_argument('--tts_text',
                         type=str,
-                        default='Your phoneme sequence was almost correct, but there was a small error. You pronounced 瓜 instead of 光. The difference lies in the ending nasal sound; 光 requires a back nasal sound, where your tongue should touch the soft palate. Please practice this back nasal sound to improve your pronunciation accuracy.')
+                        default="""让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。""")
     parser.add_argument('--spk_id',
                         type=str,
                         default='中文男')

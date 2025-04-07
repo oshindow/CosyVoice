@@ -64,10 +64,10 @@ class CosyVoiceServiceImpl(cosyvoice_pb2_grpc.CosyVoiceServicer):
             # inference_instruct: pretrained speaker, (tts_text, instruct_text, spk_id)
             # inference_instruct2: zero-shot speaker, (tts_text, instruct_text, prompt_speech_16k)
             
-            model_output = self.cosyvoice.inference_instruct3(request.instruct_request.tts_text,
+            model_output = self.cosyvoice.inference_instruct(request.instruct_request.tts_text,
                                                               request.instruct_request.instruct_text,
-                                                                "loona",
-                                                            #   request.instruct_request.spk_id,
+                                                                # "loona",
+                                                              request.instruct_request.spk_id,
                                                             #   prompt_speech_16k,
                                                               stream=self.stream)
             end_inference_instruct = time.time()
@@ -93,7 +93,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--port',
                         type=int,
-                        default=50000)
+                        default=50003)
     parser.add_argument('--max_conc',
                         type=int,
                         default=4)

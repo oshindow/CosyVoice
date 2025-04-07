@@ -138,6 +138,7 @@ class CosyVoiceFrontEnd:
 
     def frontend_sft(self, tts_text, spk_id):
         tts_text_token, tts_text_token_len = self._extract_text_token(tts_text)
+        # print(self.spk2info)
         embedding = self.spk2info[spk_id]['embedding']
         # print("self.spk2info[spk_id]['embedding']:", embedding.shape)
         model_input = {'text': tts_text_token, 'text_len': tts_text_token_len, 'llm_embedding': embedding, 'flow_embedding': embedding}

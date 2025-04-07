@@ -35,7 +35,7 @@ class CosyVoiceModel:
         self.fp16 = fp16
         self.llm.fp16 = fp16
         self.flow.fp16 = fp16
-        self.token_min_hop_len = 2 * self.flow.input_frame_rate
+        self.token_min_hop_len = 1 * self.flow.input_frame_rate
         self.token_max_hop_len = 4 * self.flow.input_frame_rate
         self.token_overlap_len = 20
         # here we fix set flow.decoder.estimator.static_chunk_size = 0 for compatibability

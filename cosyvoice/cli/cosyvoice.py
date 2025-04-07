@@ -98,6 +98,7 @@ class CosyVoice:
                 start_time = time.time()
 
     def inference_instruct(self, tts_text, spk_id, instruct_text, stream=False, speed=1.0, text_frontend=True):
+        spk_id = "中文女"
         assert isinstance(self.model, CosyVoiceModel), 'inference_instruct is only implemented for CosyVoice!'
         if self.instruct is False:
             raise ValueError('{} do not support instruct inference'.format(self.model_dir))

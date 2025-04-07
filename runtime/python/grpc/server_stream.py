@@ -23,6 +23,7 @@ import grpc
 import torch
 import numpy as np
 import time
+import random
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append('{}/../../..'.format(ROOT_DIR))
 sys.path.append('{}/../../../third_party/Matcha-TTS'.format(ROOT_DIR))
@@ -30,7 +31,16 @@ from cosyvoice.cli.cosyvoice import CosyVoice, CosyVoice2
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s')
 
+def set_seed(seed: int = 42):
+    random.seed(seed)  
+    np.random.seed(seed)   
+    torch.manual_seed(seed)   
+    torch.cuda.manual_seed(seed)   
+    torch.cuda.manual_seed_all(seed)  
+    torch.backends.cudnn.deterministic = True  
+    torch.backends.cudnn.benchmark = False  
 
+set_seed(42)
 class CosyVoiceServiceImpl(cosyvoice_pb2_grpc.CosyVoiceServicer):
     def __init__(self, args):
         self.cosyvoice = CosyVoice(args.model_dir, load_jit=False, load_trt=True, fp16=False)
@@ -91,7 +101,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--port',
                         type=int,
-                        default=50000)
+                        default=50002)
     parser.add_argument('--max_conc',
                         type=int,
                         default=4)

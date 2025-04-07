@@ -44,7 +44,7 @@ def get_args():
     parser = argparse.ArgumentParser(description='export your model for deployment')
     parser.add_argument('--model_dir',
                         type=str,
-                        default='pretrained_models/CosyVoice-300M-Instruct',
+                        default='pretrained_models/CosyVoice2-0.5B',
                         help='local path')
     args = parser.parse_args()
     print(args)
