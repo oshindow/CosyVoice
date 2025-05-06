@@ -1,0 +1,1827 @@
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+2025-04-16 11:05:20,885 INFO input frame rate=50
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:28: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+/data/codes/CosyVoice/runtime/python/grpc/../../../cosyvoice/dataset/processor.py:24: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+  torchaudio.set_audio_backend('soundfile')
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py:115: UserWarning: Specified provider 'CUDAExecutionProvider' is not in available provider names.Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
+  warnings.warn(
+2025-04-16 11:05:23,446 WETEXT INFO building fst for zh_normalizer ...
+2025-04-16 11:05:23,446 INFO building fst for zh_normalizer ...
+2025-04-16 11:05:53,627 WETEXT INFO done
+2025-04-16 11:05:53,627 INFO done
+2025-04-16 11:05:53,627 WETEXT INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-04-16 11:05:53,627 INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-04-16 11:05:53,627 WETEXT INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-04-16 11:05:53,627 INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-04-16 11:05:53,632 WETEXT INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-04-16 11:05:53,632 INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-04-16 11:05:53,632 WETEXT INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-04-16 11:05:53,632 INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-04-16 11:05:53,632 WETEXT INFO skip building fst for en_normalizer ...
+2025-04-16 11:05:53,632 INFO skip building fst for en_normalizer ...
+[04/16/2025-11:05:56] [TRT] [I] Loaded engine size: 340 MiB
+[04/16/2025-11:05:58] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +1598, now: CPU 0, GPU 1910 (MiB)
+2025-04-16 11:05:58,686 INFO grpc service initialized
+2025-04-16 11:05:58,688 INFO server listening on 0.0.0.0:50000
+2025-04-16 11:06:41,182 INFO get instruct inference request
+2025-04-16 11:06:41,183 INFO inference instruct 1.8358230590820312e-05
+2025-04-16 11:06:41,183 INFO send inference response
+failed to import ttsfrd, use WeTextProcessing instead
+Binding 0: Name = x, Shape = (-1, 80, -1)
+Binding 1: Name = mask, Shape = (-1, 1, -1)
+Binding 2: Name = mu, Shape = (-1, 80, -1)
+Binding 3: Name = t, Shape = (-1,)
+Binding 4: Name = spks, Shape = (-1, 80)
+Binding 5: Name = cond, Shape = (-1, 80, -1)
+Binding 6: Name = estimator_out, Shape = (-1, 80, -1)
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 11:06:41,201 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 11:06:41,204 INFO instruct_text 高兴<endofprompt>
+2025-04-16 11:06:41,205 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 11:06:43,728 INFO inference instruct cost time 2.523571252822876
+2025-04-16 11:06:43,729 INFO yield speech len 0.7662585034013606, rtf 3.2936586342243985
+2025-04-16 11:06:44,151 INFO inference instruct cost time 0.42157983779907227
+2025-04-16 11:06:44,151 INFO yield speech len 0.9984580498866213, rtf 0.42249905432812696
+2025-04-16 11:06:44,916 INFO inference instruct cost time 0.7635362148284912
+2025-04-16 11:06:44,916 INFO yield speech len 0.9984580498866213, rtf 0.7649565424206991
+2025-04-16 11:06:45,733 INFO inference instruct cost time 0.816392183303833
+2025-04-16 11:06:45,733 INFO yield speech len 0.9984580498866213, rtf 0.8178693042028435
+2025-04-16 11:06:45,902 INFO  encode text: 0.2100694179534912, embedding 5.841255187988281e-05, prompt speech 0.000278472900390625, decode 4.144211292266846
+2025-04-16 11:06:46,106 INFO inference instruct cost time 0.37214231491088867
+2025-04-16 11:06:46,106 INFO yield speech len 1.1261678004535147, rtf 0.3306455530955927
+2025-04-16 11:06:46,107 INFO instruct_text_norm: 0.009009838104248047, frontend_instruct: 0.0038576126098632812
+100%|██████████| 1/1 [00:04<00:00,  4.91s/it]100%|██████████| 1/1 [00:04<00:00,  4.91s/it]
+2025-04-16 11:38:58,802 INFO get instruct inference request
+2025-04-16 11:38:58,802 INFO inference instruct 2.0265579223632812e-05
+2025-04-16 11:38:58,802 INFO send inference response
+cost time: 0.9915168285369873
+cost time: 0.32060956954956055
+cost time: 0.28965044021606445
+cost time: 0.31212615966796875
+lock 0.00011968612670898438, llm 4.699787616729736, stream 4.69975471496582, remain 0.20146441459655762
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 11:38:58,814 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈[laughter]。
+2025-04-16 11:38:58,822 INFO instruct_text 高兴<endofprompt>
+2025-04-16 11:38:58,822 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈[laughter]。
+2025-04-16 11:38:59,945 INFO inference instruct cost time 1.122340440750122
+2025-04-16 11:38:59,945 INFO yield speech len 0.7662585034013606, rtf 1.464965020899068
+2025-04-16 11:39:00,747 INFO inference instruct cost time 0.8020164966583252
+2025-04-16 11:39:00,747 INFO yield speech len 0.9984580498866213, rtf 0.803498160852076
+2025-04-16 11:39:01,483 INFO inference instruct cost time 0.7346227169036865
+2025-04-16 11:39:01,483 INFO yield speech len 0.9984580498866213, rtf 0.7360093766650141
+2025-04-16 11:39:02,248 INFO inference instruct cost time 0.7643601894378662
+2025-04-16 11:39:02,248 INFO yield speech len 0.9984580498866213, rtf 0.7657801180124976
+2025-04-16 11:39:03,054 INFO inference instruct cost time 0.8049781322479248
+2025-04-16 11:39:03,054 INFO yield speech len 0.9984580498866213, rtf 0.8064748768066597
+2025-04-16 11:39:03,797 INFO inference instruct cost time 0.7421779632568359
+2025-04-16 11:39:03,797 INFO yield speech len 0.9984580498866213, rtf 0.7435364134306478
+2025-04-16 11:39:04,558 INFO inference instruct cost time 0.760561466217041
+2025-04-16 11:39:04,558 INFO yield speech len 0.9984580498866213, rtf 0.7619874676429601
+2025-04-16 11:39:05,022 INFO  encode text: 0.0055027008056640625, embedding 2.0503997802734375e-05, prompt speech 7.033348083496094e-05, decode 6.192067623138428
+2025-04-16 11:39:05,116 INFO inference instruct cost time 0.5564467906951904
+2025-04-16 11:39:05,116 INFO yield speech len 0.9984580498866213, rtf 0.5574942929237041
+2025-04-16 11:39:05,295 INFO inference instruct cost time 0.17805695533752441
+2025-04-16 11:39:05,295 INFO yield speech len 0.626938775510204, rtf 0.2843208145350218
+2025-04-16 11:39:05,296 INFO instruct_text_norm: 0.0010142326354980469, frontend_instruct: 0.00832056999206543
+100%|██████████| 1/1 [00:06<00:00,  6.48s/it]100%|██████████| 1/1 [00:06<00:00,  6.48s/it]
+2025-04-16 11:55:25,327 INFO get instruct inference request
+2025-04-16 11:55:25,328 INFO inference instruct 2.0503997802734375e-05
+2025-04-16 11:55:25,328 INFO send inference response
+cost time: 0.3152024745941162
+cost time: 0.3887672424316406
+cost time: 0.331312894821167
+cost time: 0.3210487365722656
+cost time: 0.3610830307006836
+cost time: 0.31876325607299805
+cost time: 0.34740304946899414
+cost time: 0.1229245662689209
+lock 9.608268737792969e-05, llm 6.293580770492554, stream 6.293569326400757, remain 0.17874526977539062
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 11:55:25,348 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 11:55:25,360 INFO instruct_text 高兴<endofprompt>
+2025-04-16 11:55:25,361 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 11:55:26,522 INFO inference instruct cost time 1.1609299182891846
+2025-04-16 11:55:26,522 INFO yield speech len 0.7662585034013606, rtf 1.515393763441931
+2025-04-16 11:55:27,225 INFO inference instruct cost time 0.7005984783172607
+2025-04-16 11:55:27,225 INFO yield speech len 0.9984580498866213, rtf 0.7018934323474072
+2025-04-16 11:55:27,977 INFO inference instruct cost time 0.7513294219970703
+2025-04-16 11:55:27,977 INFO yield speech len 0.9984580498866213, rtf 0.7527588363087108
+2025-04-16 11:55:28,744 INFO inference instruct cost time 0.7663981914520264
+2025-04-16 11:55:28,745 INFO yield speech len 0.9984580498866213, rtf 0.7678195958697172
+2025-04-16 11:55:29,536 INFO inference instruct cost time 0.7910943031311035
+2025-04-16 11:55:29,536 INFO yield speech len 0.9984580498866213, rtf 0.7925705616037513
+2025-04-16 11:55:30,250 INFO inference instruct cost time 0.7131783962249756
+2025-04-16 11:55:30,251 INFO yield speech len 0.9984580498866213, rtf 0.7144963596189438
+2025-04-16 11:55:30,922 INFO inference instruct cost time 0.6705582141876221
+2025-04-16 11:55:30,922 INFO yield speech len 0.9984580498866213, rtf 0.6718497577145003
+2025-04-16 11:55:31,710 INFO inference instruct cost time 0.7875356674194336
+2025-04-16 11:55:31,710 INFO yield speech len 0.9984580498866213, rtf 0.788975149111519
+2025-04-16 11:55:31,838 INFO  encode text: 0.012898683547973633, embedding 2.3126602172851562e-05, prompt speech 0.0005877017974853516, decode 6.452723264694214
+2025-04-16 11:55:32,020 INFO inference instruct cost time 0.30953335762023926
+2025-04-16 11:55:32,021 INFO yield speech len 1.1029478458049886, rtf 0.28085372214646714
+2025-04-16 11:55:32,021 INFO instruct_text_norm: 0.0069806575775146484, frontend_instruct: 0.012957572937011719
+100%|██████████| 1/1 [00:06<00:00,  6.67s/it]100%|██████████| 1/1 [00:06<00:00,  6.67s/it]
+2025-04-16 11:56:10,339 INFO get instruct inference request
+2025-04-16 11:56:10,339 INFO inference instruct 1.0728836059570312e-05
+2025-04-16 11:56:10,339 INFO send inference response
+cost time: 0.340991735458374
+cost time: 0.3077864646911621
+cost time: 0.3381044864654541
+cost time: 0.3530564308166504
+cost time: 0.38808751106262207
+cost time: 0.320293664932251
+cost time: 0.26744818687438965
+cost time: 0.34413671493530273
+lock 0.0022296905517578125, llm 6.477285146713257, stream 6.4772727489471436, remain 0.17920732498168945
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 11:56:10,352 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 11:56:10,359 INFO instruct_text 高兴<endofprompt>
+2025-04-16 11:56:10,360 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 11:56:11,507 INFO inference instruct cost time 1.1467559337615967
+2025-04-16 11:56:11,507 INFO yield speech len 0.7662585034013606, rtf 1.4968656172806565
+2025-04-16 11:56:12,323 INFO inference instruct cost time 0.8158738613128662
+2025-04-16 11:56:12,324 INFO yield speech len 0.9984580498866213, rtf 0.8173594944352327
+2025-04-16 11:56:13,026 INFO inference instruct cost time 0.7019953727722168
+2025-04-16 11:56:13,026 INFO yield speech len 0.9984580498866213, rtf 0.7032834101728228
+2025-04-16 11:56:13,739 INFO inference instruct cost time 0.7119600772857666
+2025-04-16 11:56:13,739 INFO yield speech len 0.9984580498866213, rtf 0.7133215286790632
+2025-04-16 11:56:14,469 INFO inference instruct cost time 0.7295219898223877
+2025-04-16 11:56:14,469 INFO yield speech len 0.9984580498866213, rtf 0.730865670714614
+2025-04-16 11:56:15,224 INFO inference instruct cost time 0.7534496784210205
+2025-04-16 11:56:15,224 INFO yield speech len 0.9984580498866213, rtf 0.7548541902716076
+2025-04-16 11:56:16,033 INFO inference instruct cost time 0.8082427978515625
+2025-04-16 11:56:16,033 INFO yield speech len 0.9984580498866213, rtf 0.8097018413029091
+2025-04-16 11:56:16,717 INFO inference instruct cost time 0.6833944320678711
+2025-04-16 11:56:16,718 INFO yield speech len 0.9984580498866213, rtf 0.6846945759905285
+2025-04-16 11:56:17,008 INFO  encode text: 0.005454540252685547, embedding 2.2411346435546875e-05, prompt speech 7.224082946777344e-05, decode 6.641181230545044
+2025-04-16 11:56:17,235 INFO inference instruct cost time 0.5163819789886475
+2025-04-16 11:56:17,235 INFO yield speech len 1.3699773242630386, rtf 0.3770888921157536
+2025-04-16 11:56:17,235 INFO instruct_text_norm: 0.0010504722595214844, frontend_instruct: 0.008148670196533203
+100%|██████████| 1/1 [00:06<00:00,  6.88s/it]100%|██████████| 1/1 [00:06<00:00,  6.88s/it]
+2025-04-16 12:01:16,391 INFO get instruct inference request
+2025-04-16 12:01:16,391 INFO inference instruct 1.239776611328125e-05
+2025-04-16 12:01:16,392 INFO send inference response
+cost time: 0.32955288887023926
+cost time: 0.3925156593322754
+cost time: 0.29875731468200684
+cost time: 0.2888219356536865
+cost time: 0.29614973068237305
+cost time: 0.30989694595336914
+cost time: 0.38500165939331055
+cost time: 0.28018879890441895
+lock 6.198883056640625e-05, llm 6.649947643280029, stream 6.649933576583862, remain 0.22491860389709473
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:01:16,405 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:01:16,412 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:01:16,413 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:01:17,493 INFO inference instruct cost time 1.0803427696228027
+2025-04-16 12:01:17,493 INFO yield speech len 0.7662585034013606, rtf 1.4101951637051322
+2025-04-16 12:01:18,249 INFO inference instruct cost time 0.7556090354919434
+2025-04-16 12:01:18,250 INFO yield speech len 0.9984580498866213, rtf 0.7570011221782066
+2025-04-16 12:01:18,990 INFO inference instruct cost time 0.7399446964263916
+2025-04-16 12:01:18,991 INFO yield speech len 0.9984580498866213, rtf 0.7413593943902226
+2025-04-16 12:01:19,802 INFO inference instruct cost time 0.8109829425811768
+2025-04-16 12:01:19,802 INFO yield speech len 0.9984580498866213, rtf 0.8124734394165666
+2025-04-16 12:01:20,528 INFO inference instruct cost time 0.7247629165649414
+2025-04-16 12:01:20,528 INFO yield speech len 0.9984580498866213, rtf 0.7261238429088925
+2025-04-16 12:01:21,264 INFO inference instruct cost time 0.7358543872833252
+2025-04-16 12:01:21,265 INFO yield speech len 0.9984580498866213, rtf 0.7371939978627271
+2025-04-16 12:01:22,045 INFO inference instruct cost time 0.7796437740325928
+2025-04-16 12:01:22,045 INFO yield speech len 0.9984580498866213, rtf 0.7810732171069398
+2025-04-16 12:01:22,492 INFO  encode text: 0.0055963993072509766, embedding 2.47955322265625e-05, prompt speech 7.891654968261719e-05, decode 6.071908473968506
+2025-04-16 12:01:22,583 INFO inference instruct cost time 0.5378966331481934
+2025-04-16 12:01:22,584 INFO yield speech len 0.9984580498866213, rtf 0.538930770139708
+2025-04-16 12:01:22,752 INFO inference instruct cost time 0.16769742965698242
+2025-04-16 12:01:22,752 INFO yield speech len 0.6501587301587302, rtf 0.2582858316600323
+2025-04-16 12:01:22,753 INFO instruct_text_norm: 0.0011038780212402344, frontend_instruct: 0.007827281951904297
+100%|██████████| 1/1 [00:06<00:00,  6.35s/it]100%|██████████| 1/1 [00:06<00:00,  6.35s/it]
+2025-04-16 12:03:22,159 INFO get instruct inference request
+2025-04-16 12:03:22,159 INFO inference instruct 1.5974044799804688e-05
+2025-04-16 12:03:22,159 INFO send inference response
+cost time: 0.293304443359375
+cost time: 0.35248231887817383
+cost time: 0.32668304443359375
+cost time: 0.3876068592071533
+cost time: 0.33164286613464355
+cost time: 0.32257938385009766
+cost time: 0.36660075187683105
+cost time: 0.13475608825683594
+lock 6.0558319091796875e-05, llm 6.17103385925293, stream 6.17102575302124, remain 0.1683492660522461
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:03:22,175 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:03:22,178 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:03:22,178 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:03:23,283 INFO inference instruct cost time 1.104299545288086
+2025-04-16 12:03:23,283 INFO yield speech len 0.7662585034013606, rtf 1.4417223843999885
+2025-04-16 12:03:24,035 INFO inference instruct cost time 0.7517051696777344
+2025-04-16 12:03:24,036 INFO yield speech len 0.9984580498866213, rtf 0.7534169326644651
+2025-04-16 12:03:24,870 INFO inference instruct cost time 0.8336684703826904
+2025-04-16 12:03:24,870 INFO yield speech len 0.9984580498866213, rtf 0.8351491092769212
+2025-04-16 12:03:25,655 INFO inference instruct cost time 0.7841219902038574
+2025-04-16 12:03:25,655 INFO yield speech len 0.9984580498866213, rtf 0.7855838993131075
+2025-04-16 12:03:26,481 INFO inference instruct cost time 0.8244223594665527
+2025-04-16 12:03:26,481 INFO yield speech len 0.9984580498866213, rtf 0.825894211397268
+2025-04-16 12:03:27,314 INFO inference instruct cost time 0.832545280456543
+2025-04-16 12:03:27,315 INFO yield speech len 0.9984580498866213, rtf 0.8348334331585224
+2025-04-16 12:03:28,147 INFO inference instruct cost time 0.8314318656921387
+2025-04-16 12:03:28,147 INFO yield speech len 0.9984580498866213, rtf 0.8329728065968253
+2025-04-16 12:03:28,550 INFO  encode text: 0.0054705142974853516, embedding 2.2172927856445312e-05, prompt speech 8.106231689453125e-05, decode 6.364497661590576
+2025-04-16 12:03:28,743 INFO inference instruct cost time 0.5950450897216797
+2025-04-16 12:03:28,743 INFO yield speech len 1.5209070294784581, rtf 0.39138809941310915
+2025-04-16 12:03:28,744 INFO instruct_text_norm: 0.0025784969329833984, frontend_instruct: 0.003679513931274414
+100%|██████████| 1/1 [00:06<00:00,  6.57s/it]100%|██████████| 1/1 [00:06<00:00,  6.57s/it]
+2025-04-16 12:03:30,108 INFO get instruct inference request
+2025-04-16 12:03:30,108 INFO inference instruct 1.7642974853515625e-05
+2025-04-16 12:03:30,108 INFO send inference response
+cost time: 0.2573568820953369
+cost time: 0.2881202697753906
+cost time: 0.3502020835876465
+cost time: 0.3004610538482666
+cost time: 0.35097527503967285
+cost time: 0.3792412281036377
+cost time: 0.35767698287963867
+lock 6.341934204101562e-05, llm 6.372456312179565, stream 6.372438430786133, remain 0.19278597831726074
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:03:30,121 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:03:30,122 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:03:30,122 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:03:31,330 INFO inference instruct cost time 1.2081255912780762
+2025-04-16 12:03:31,331 INFO yield speech len 0.7662585034013606, rtf 1.5769332329827275
+2025-04-16 12:03:32,179 INFO inference instruct cost time 0.8475735187530518
+2025-04-16 12:03:32,179 INFO yield speech len 0.9984580498866213, rtf 0.8491050024235317
+2025-04-16 12:03:32,940 INFO inference instruct cost time 0.7601032257080078
+2025-04-16 12:03:32,940 INFO yield speech len 0.9984580498866213, rtf 0.7614962832439084
+2025-04-16 12:03:33,744 INFO inference instruct cost time 0.8031678199768066
+2025-04-16 12:03:33,744 INFO yield speech len 0.9984580498866213, rtf 0.804635502268062
+2025-04-16 12:03:34,494 INFO inference instruct cost time 0.7490181922912598
+2025-04-16 12:03:34,494 INFO yield speech len 0.9984580498866213, rtf 0.7504046374801979
+2025-04-16 12:03:35,281 INFO inference instruct cost time 0.7866122722625732
+2025-04-16 12:03:35,281 INFO yield speech len 0.9984580498866213, rtf 0.7880188080720429
+2025-04-16 12:03:36,091 INFO inference instruct cost time 0.8086810111999512
+2025-04-16 12:03:36,091 INFO yield speech len 0.9984580498866213, rtf 0.8101395374640475
+2025-04-16 12:03:36,860 INFO inference instruct cost time 0.7688262462615967
+2025-04-16 12:03:36,860 INFO yield speech len 0.9984580498866213, rtf 0.7702380283410812
+2025-04-16 12:03:37,008 INFO  encode text: 0.00549006462097168, embedding 2.2411346435546875e-05, prompt speech 0.00011014938354492188, decode 6.878374338150024
+2025-04-16 12:03:37,154 INFO inference instruct cost time 0.29323840141296387
+2025-04-16 12:03:37,155 INFO yield speech len 1.1029478458049886, rtf 0.2660459961350027
+2025-04-16 12:03:37,155 INFO instruct_text_norm: 0.0014019012451171875, frontend_instruct: 0.0013277530670166016
+100%|██████████| 1/1 [00:07<00:00,  7.03s/it]100%|██████████| 1/1 [00:07<00:00,  7.03s/it]
+2025-04-16 12:08:55,136 INFO get instruct inference request
+2025-04-16 12:08:55,136 INFO inference instruct 1.1682510375976562e-05
+2025-04-16 12:08:55,136 INFO send inference response
+cost time: 0.3412361145019531
+cost time: 0.36392831802368164
+cost time: 0.32677769660949707
+cost time: 0.35932326316833496
+cost time: 0.30555057525634766
+cost time: 0.3326296806335449
+cost time: 0.36527299880981445
+cost time: 0.33539700508117676
+lock 6.008148193359375e-05, llm 6.889446496963501, stream 6.889435529708862, remain 0.14268922805786133
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:08:55,149 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈[laughter]。
+2025-04-16 12:08:55,157 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:08:55,158 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈[laughter]。
+2025-04-16 12:08:56,334 INFO inference instruct cost time 1.1760313510894775
+2025-04-16 12:08:56,334 INFO yield speech len 0.7662585034013606, rtf 1.5351593388583171
+2025-04-16 12:08:57,210 INFO inference instruct cost time 0.8755350112915039
+2025-04-16 12:08:57,211 INFO yield speech len 0.9984580498866213, rtf 0.8771985054535921
+2025-04-16 12:08:58,008 INFO inference instruct cost time 0.7968597412109375
+2025-04-16 12:08:58,008 INFO yield speech len 0.9984580498866213, rtf 0.7983203083926508
+2025-04-16 12:08:58,833 INFO inference instruct cost time 0.8242690563201904
+2025-04-16 12:08:58,834 INFO yield speech len 0.9984580498866213, rtf 0.8257936821644043
+2025-04-16 12:08:59,641 INFO inference instruct cost time 0.8065481185913086
+2025-04-16 12:08:59,641 INFO yield speech len 0.9984580498866213, rtf 0.8080021570285045
+2025-04-16 12:09:00,450 INFO inference instruct cost time 0.8081212043762207
+2025-04-16 12:09:00,451 INFO yield speech len 0.9984580498866213, rtf 0.8104024417048623
+2025-04-16 12:09:01,285 INFO inference instruct cost time 0.8332922458648682
+2025-04-16 12:09:01,286 INFO yield speech len 0.9984580498866213, rtf 0.8353248563443505
+2025-04-16 12:09:02,119 INFO inference instruct cost time 0.8327414989471436
+2025-04-16 12:09:02,119 INFO yield speech len 0.9984580498866213, rtf 0.8342581958141784
+2025-04-16 12:09:02,696 INFO  encode text: 0.006323575973510742, embedding 2.7179718017578125e-05, prompt speech 0.00010824203491210938, decode 7.530016183853149
+2025-04-16 12:09:02,781 INFO inference instruct cost time 0.6612076759338379
+2025-04-16 12:09:02,781 INFO yield speech len 0.9984580498866213, rtf 0.662472601005331
+2025-04-16 12:09:02,946 INFO inference instruct cost time 0.16370511054992676
+2025-04-16 12:09:02,946 INFO yield speech len 0.6849886621315193, rtf 0.2394935124064401
+2025-04-16 12:09:02,947 INFO instruct_text_norm: 0.0010554790496826172, frontend_instruct: 0.008610725402832031
+100%|██████████| 1/1 [00:07<00:00,  7.80s/it]100%|██████████| 1/1 [00:07<00:00,  7.80s/it]
+2025-04-16 12:11:22,042 INFO get instruct inference request
+2025-04-16 12:11:22,042 INFO inference instruct 1.8596649169921875e-05
+2025-04-16 12:11:22,042 INFO send inference response
+cost time: 0.26713013648986816
+cost time: 0.39156556129455566
+cost time: 0.36234140396118164
+cost time: 0.3405635356903076
+cost time: 0.3327608108520508
+cost time: 0.35473012924194336
+cost time: 0.34942078590393066
+cost time: 0.3790316581726074
+cost time: 0.18755531311035156
+lock 6.318092346191406e-05, llm 7.623492956161499, stream 7.623485088348389, remain 0.16448211669921875
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:11:22,059 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:11:22,068 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:11:22,069 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:11:23,275 INFO inference instruct cost time 1.2067210674285889
+2025-04-16 12:11:23,276 INFO yield speech len 0.7662585034013606, rtf 1.575217571702193
+2025-04-16 12:11:24,044 INFO inference instruct cost time 0.7676725387573242
+2025-04-16 12:11:24,044 INFO yield speech len 0.9984580498866213, rtf 0.7691759047596607
+2025-04-16 12:11:24,842 INFO inference instruct cost time 0.796746015548706
+2025-04-16 12:11:24,842 INFO yield speech len 0.9984580498866213, rtf 0.7981992434970168
+2025-04-16 12:11:25,641 INFO inference instruct cost time 0.7985725402832031
+2025-04-16 12:11:25,641 INFO yield speech len 0.9984580498866213, rtf 0.8000987923032669
+2025-04-16 12:11:26,420 INFO inference instruct cost time 0.7787482738494873
+2025-04-16 12:11:26,421 INFO yield speech len 0.9984580498866213, rtf 0.7805249626683287
+2025-04-16 12:11:27,140 INFO inference instruct cost time 0.7186734676361084
+2025-04-16 12:11:27,142 INFO yield speech len 0.9984580498866213, rtf 0.7215143029772958
+2025-04-16 12:11:27,956 INFO inference instruct cost time 0.8128769397735596
+2025-04-16 12:11:27,956 INFO yield speech len 0.9984580498866213, rtf 0.8144558472342269
+2025-04-16 12:11:28,748 INFO inference instruct cost time 0.7906992435455322
+2025-04-16 12:11:28,748 INFO yield speech len 0.9984580498866213, rtf 0.7921586544144639
+2025-04-16 12:11:28,987 INFO  encode text: 0.005414009094238281, embedding 2.2172927856445312e-05, prompt speech 0.000102996826171875, decode 6.911737442016602
+2025-04-16 12:11:29,166 INFO inference instruct cost time 0.41793179512023926
+2025-04-16 12:11:29,167 INFO yield speech len 1.242267573696145, rtf 0.33658814929843506
+2025-04-16 12:11:29,167 INFO instruct_text_norm: 0.0011739730834960938, frontend_instruct: 0.00956416130065918
+100%|██████████| 1/1 [00:07<00:00,  7.11s/it]100%|██████████| 1/1 [00:07<00:00,  7.11s/it]
+2025-04-16 12:12:46,478 INFO get instruct inference request
+2025-04-16 12:12:46,479 INFO inference instruct 2.8133392333984375e-05
+2025-04-16 12:12:46,479 INFO send inference response
+cost time: 0.33896732330322266
+cost time: 0.3041379451751709
+cost time: 0.35358500480651855
+cost time: 0.33497142791748047
+cost time: 0.32520151138305664
+cost time: 0.25521254539489746
+cost time: 0.2979576587677002
+cost time: 0.29705071449279785
+lock 7.367134094238281e-05, llm 6.921303987503052, stream 6.92127537727356, remain 0.17640972137451172
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:12:46,496 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:12:46,503 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:12:46,504 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:12:47,703 INFO inference instruct cost time 1.1993248462677002
+2025-04-16 12:12:47,703 INFO yield speech len 0.7662585034013606, rtf 1.5655272280458699
+2025-04-16 12:12:48,490 INFO inference instruct cost time 0.7858524322509766
+2025-04-16 12:12:48,490 INFO yield speech len 0.9984580498866213, rtf 0.7872663909396113
+2025-04-16 12:12:49,247 INFO inference instruct cost time 0.756584644317627
+2025-04-16 12:12:49,247 INFO yield speech len 0.9984580498866213, rtf 0.757973939505254
+2025-04-16 12:12:50,054 INFO inference instruct cost time 0.8056201934814453
+2025-04-16 12:12:50,054 INFO yield speech len 0.9984580498866213, rtf 0.8070732764683144
+2025-04-16 12:12:50,889 INFO inference instruct cost time 0.8351249694824219
+2025-04-16 12:12:50,890 INFO yield speech len 0.9984580498866213, rtf 0.8366133497897968
+2025-04-16 12:12:51,727 INFO inference instruct cost time 0.8372664451599121
+2025-04-16 12:12:51,728 INFO yield speech len 0.9984580498866213, rtf 0.8387552671740914
+2025-04-16 12:12:52,575 INFO inference instruct cost time 0.8463611602783203
+2025-04-16 12:12:52,575 INFO yield speech len 0.9984580498866213, rtf 0.8478969801217318
+2025-04-16 12:12:52,846 INFO  encode text: 0.005328655242919922, embedding 2.3126602172851562e-05, prompt speech 6.818771362304688e-05, decode 6.335508346557617
+2025-04-16 12:12:53,017 INFO inference instruct cost time 0.4419574737548828
+2025-04-16 12:12:53,018 INFO yield speech len 1.3467573696145125, rtf 0.32842756281125135
+2025-04-16 12:12:53,018 INFO instruct_text_norm: 0.0012545585632324219, frontend_instruct: 0.007377147674560547
+100%|██████████| 1/1 [00:06<00:00,  6.52s/it]100%|██████████| 1/1 [00:06<00:00,  6.52s/it]
+2025-04-16 12:15:29,630 INFO get instruct inference request
+2025-04-16 12:15:29,630 INFO inference instruct 9.5367431640625e-06
+2025-04-16 12:15:29,630 INFO send inference response
+cost time: 0.33169007301330566
+cost time: 0.3218536376953125
+cost time: 0.30295848846435547
+cost time: 0.3120880126953125
+cost time: 0.34110212326049805
+cost time: 0.3634674549102783
+cost time: 0.3725872039794922
+lock 7.724761962890625e-05, llm 6.342946290969849, stream 6.3429341316223145, remain 0.17085886001586914
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:15:29,644 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:15:29,654 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:15:29,654 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:15:30,851 INFO inference instruct cost time 1.1966345310211182
+2025-04-16 12:15:30,851 INFO yield speech len 0.7662585034013606, rtf 1.5620137628337198
+2025-04-16 12:15:31,595 INFO inference instruct cost time 0.7425000667572021
+2025-04-16 12:15:31,595 INFO yield speech len 0.9984580498866213, rtf 0.7438454035193074
+2025-04-16 12:15:32,335 INFO inference instruct cost time 0.738494873046875
+2025-04-16 12:15:32,335 INFO yield speech len 0.9984580498866213, rtf 0.7398536049782537
+2025-04-16 12:15:33,207 INFO inference instruct cost time 0.8720870018005371
+2025-04-16 12:15:33,208 INFO yield speech len 0.9984580498866213, rtf 0.8737437383726585
+2025-04-16 12:15:33,983 INFO inference instruct cost time 0.7743675708770752
+2025-04-16 12:15:33,983 INFO yield speech len 0.9984580498866213, rtf 0.7758008050840608
+2025-04-16 12:15:34,818 INFO inference instruct cost time 0.8341326713562012
+2025-04-16 12:15:34,818 INFO yield speech len 0.9984580498866213, rtf 0.8357069151865881
+2025-04-16 12:15:35,718 INFO inference instruct cost time 0.8989250659942627
+2025-04-16 12:15:35,719 INFO yield speech len 0.9984580498866213, rtf 0.9005434946481918
+2025-04-16 12:15:36,472 INFO inference instruct cost time 0.7529511451721191
+2025-04-16 12:15:36,472 INFO yield speech len 0.9984580498866213, rtf 0.7543152485172763
+2025-04-16 12:15:36,622 INFO  encode text: 0.006356954574584961, embedding 2.7894973754882812e-05, prompt speech 0.00012159347534179688, decode 6.959367990493774
+2025-04-16 12:15:36,818 INFO inference instruct cost time 0.34441637992858887
+2025-04-16 12:15:36,818 INFO yield speech len 1.0681179138321995, rtf 0.32265655666022847
+2025-04-16 12:15:36,818 INFO instruct_text_norm: 0.0010478496551513672, frontend_instruct: 0.010953903198242188
+100%|██████████| 1/1 [00:07<00:00,  7.17s/it]100%|██████████| 1/1 [00:07<00:00,  7.18s/it]
+2025-04-16 12:18:21,571 INFO get instruct inference request
+2025-04-16 12:18:21,571 INFO inference instruct 2.09808349609375e-05
+2025-04-16 12:18:21,571 INFO send inference response
+cost time: 0.30919551849365234
+cost time: 0.28888535499572754
+cost time: 0.26475071907043457
+cost time: 0.3982663154602051
+cost time: 0.34096360206604004
+cost time: 0.3492105007171631
+cost time: 0.3838663101196289
+cost time: 0.31957221031188965
+lock 5.936622619628906e-05, llm 6.969352960586548, stream 6.969339609146118, remain 0.19388508796691895
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:18:21,587 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:18:21,598 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:18:21,599 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:18:22,850 INFO inference instruct cost time 1.2511234283447266
+2025-04-16 12:18:22,850 INFO yield speech len 0.7662585034013606, rtf 1.6330951591953635
+2025-04-16 12:18:23,646 INFO inference instruct cost time 0.7941653728485107
+2025-04-16 12:18:23,646 INFO yield speech len 0.9984580498866213, rtf 0.7955783198392669
+2025-04-16 12:18:24,470 INFO inference instruct cost time 0.8232080936431885
+2025-04-16 12:18:24,470 INFO yield speech len 0.9984580498866213, rtf 0.8247659438787851
+2025-04-16 12:18:25,259 INFO inference instruct cost time 0.7879533767700195
+2025-04-16 12:18:25,259 INFO yield speech len 0.9984580498866213, rtf 0.7893584018876386
+2025-04-16 12:18:25,986 INFO inference instruct cost time 0.7266147136688232
+2025-04-16 12:18:25,986 INFO yield speech len 0.9984580498866213, rtf 0.7279183255335272
+2025-04-16 12:18:26,693 INFO inference instruct cost time 0.7065045833587646
+2025-04-16 12:18:26,694 INFO yield speech len 0.9984580498866213, rtf 0.7078210752847236
+2025-04-16 12:18:27,484 INFO inference instruct cost time 0.7886962890625
+2025-04-16 12:18:27,484 INFO yield speech len 0.9984580498866213, rtf 0.7901289668150766
+2025-04-16 12:18:28,250 INFO  encode text: 0.0062236785888671875, embedding 2.6226043701171875e-05, prompt speech 0.00012493133544921875, decode 6.642940998077393
+2025-04-16 12:18:28,258 INFO inference instruct cost time 0.7731776237487793
+2025-04-16 12:18:28,258 INFO yield speech len 0.9984580498866213, rtf 0.7745786943624532
+2025-04-16 12:18:28,438 INFO inference instruct cost time 0.17876815795898438
+2025-04-16 12:18:28,438 INFO yield speech len 0.8243083900226758, rtf 0.2171255871128868
+2025-04-16 12:18:28,438 INFO instruct_text_norm: 0.0012350082397460938, frontend_instruct: 0.011451005935668945
+100%|██████████| 1/1 [00:06<00:00,  6.85s/it]100%|██████████| 1/1 [00:06<00:00,  6.85s/it]
+2025-04-16 12:19:41,146 INFO get instruct inference request
+2025-04-16 12:19:41,146 INFO inference instruct 1.1205673217773438e-05
+2025-04-16 12:19:41,146 INFO send inference response
+cost time: 0.39231443405151367
+cost time: 0.3402414321899414
+cost time: 0.35965514183044434
+cost time: 0.3544192314147949
+cost time: 0.28330492973327637
+cost time: 0.27328944206237793
+cost time: 0.3250279426574707
+cost time: 0.319735050201416
+lock 6.270408630371094e-05, llm 6.658264398574829, stream 6.658254861831665, remain 0.17941498756408691
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:19:41,159 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:19:41,173 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:19:41,174 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:19:42,413 INFO inference instruct cost time 1.2390224933624268
+2025-04-16 12:19:42,414 INFO yield speech len 0.7662585034013606, rtf 1.617737283760851
+2025-04-16 12:19:43,204 INFO inference instruct cost time 0.7890174388885498
+2025-04-16 12:19:43,204 INFO yield speech len 0.9984580498866213, rtf 0.7904186151748479
+2025-04-16 12:19:43,954 INFO inference instruct cost time 0.7494180202484131
+2025-04-16 12:19:43,954 INFO yield speech len 0.9984580498866213, rtf 0.7507558928282801
+2025-04-16 12:19:44,711 INFO inference instruct cost time 0.7558746337890625
+2025-04-16 12:19:44,711 INFO yield speech len 0.9984580498866213, rtf 0.7572628324851394
+2025-04-16 12:19:45,551 INFO inference instruct cost time 0.8387265205383301
+2025-04-16 12:19:45,551 INFO yield speech len 0.9984580498866213, rtf 0.8402503111811225
+2025-04-16 12:19:46,370 INFO inference instruct cost time 0.8187592029571533
+2025-04-16 12:19:46,371 INFO yield speech len 0.9984580498866213, rtf 0.8202729318940708
+2025-04-16 12:19:47,148 INFO inference instruct cost time 0.7762525081634521
+2025-04-16 12:19:47,148 INFO yield speech len 0.9984580498866213, rtf 0.7777939583066591
+2025-04-16 12:19:47,920 INFO inference instruct cost time 0.7713220119476318
+2025-04-16 12:19:47,920 INFO yield speech len 0.9984580498866213, rtf 0.7727636760750483
+2025-04-16 12:19:48,296 INFO  encode text: 0.00536656379699707, embedding 2.288818359375e-05, prompt speech 0.000347137451171875, decode 7.112360000610352
+2025-04-16 12:19:48,485 INFO inference instruct cost time 0.5639047622680664
+2025-04-16 12:19:48,485 INFO yield speech len 1.486077097505669, rtf 0.3796089458774077
+2025-04-16 12:19:48,486 INFO instruct_text_norm: 0.0010342597961425781, frontend_instruct: 0.01484823226928711
+100%|██████████| 1/1 [00:07<00:00,  7.33s/it]100%|██████████| 1/1 [00:07<00:00,  7.33s/it]
+2025-04-16 12:19:54,988 INFO get instruct inference request
+2025-04-16 12:19:54,989 INFO inference instruct 1.0013580322265625e-05
+2025-04-16 12:19:54,989 INFO send inference response
+cost time: 0.3110172748565674
+cost time: 0.34534740447998047
+cost time: 0.3060429096221924
+cost time: 0.292543888092041
+cost time: 0.33461880683898926
+cost time: 0.3638629913330078
+cost time: 0.32273268699645996
+cost time: 0.31806468963623047
+lock 7.033348083496094e-05, llm 7.129068851470947, stream 7.129045248031616, remain 0.1816704273223877
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:19:55,002 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:19:55,003 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:19:55,003 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:19:56,184 INFO inference instruct cost time 1.1803395748138428
+2025-04-16 12:19:56,184 INFO yield speech len 0.7662585034013606, rtf 1.5408508289097385
+2025-04-16 12:19:57,038 INFO inference instruct cost time 0.8526260852813721
+2025-04-16 12:19:57,038 INFO yield speech len 0.9984580498866213, rtf 0.8541925934814782
+2025-04-16 12:19:57,803 INFO inference instruct cost time 0.7640676498413086
+2025-04-16 12:19:57,803 INFO yield speech len 0.9984580498866213, rtf 0.7657946840058579
+2025-04-16 12:19:58,611 INFO inference instruct cost time 0.8065536022186279
+2025-04-16 12:19:58,611 INFO yield speech len 0.9984580498866213, rtf 0.8080026346020573
+2025-04-16 12:19:59,452 INFO inference instruct cost time 0.8402812480926514
+2025-04-16 12:19:59,452 INFO yield speech len 0.9984580498866213, rtf 0.8417871428740232
+2025-04-16 12:20:00,201 INFO inference instruct cost time 0.7489669322967529
+2025-04-16 12:20:00,203 INFO yield speech len 0.9984580498866213, rtf 0.7513222950618974
+2025-04-16 12:20:01,046 INFO inference instruct cost time 0.8418338298797607
+2025-04-16 12:20:01,046 INFO yield speech len 0.9984580498866213, rtf 0.8433466593106819
+2025-04-16 12:20:01,804 INFO inference instruct cost time 0.7572040557861328
+2025-04-16 12:20:01,804 INFO yield speech len 0.9984580498866213, rtf 0.7585993220726418
+2025-04-16 12:20:01,865 INFO  encode text: 0.0054209232330322266, embedding 2.1696090698242188e-05, prompt speech 7.033348083496094e-05, decode 6.854511022567749
+2025-04-16 12:20:02,060 INFO inference instruct cost time 0.25580692291259766
+2025-04-16 12:20:02,061 INFO yield speech len 0.9520181405895691, rtf 0.2689483126898001
+2025-04-16 12:20:02,061 INFO instruct_text_norm: 0.0010218620300292969, frontend_instruct: 0.0014162063598632812
+100%|██████████| 1/1 [00:07<00:00,  7.06s/it]100%|██████████| 1/1 [00:07<00:00,  7.06s/it]
+2025-04-16 12:22:17,307 INFO get instruct inference request
+2025-04-16 12:22:17,307 INFO inference instruct 1.3589859008789062e-05
+2025-04-16 12:22:17,307 INFO send inference response
+cost time: 0.3015613555908203
+cost time: 0.37871789932250977
+cost time: 0.33026123046875
+cost time: 0.32259225845336914
+cost time: 0.3967549800872803
+cost time: 0.3156437873840332
+cost time: 0.3482208251953125
+cost time: 0.31370115280151367
+lock 6.604194641113281e-05, llm 6.861357927322388, stream 6.861329078674316, remain 0.19584441184997559
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:22:17,323 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:22:17,326 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:22:17,327 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:22:18,467 INFO inference instruct cost time 1.1402976512908936
+2025-04-16 12:22:18,468 INFO yield speech len 0.7662585034013606, rtf 1.4884301270781592
+2025-04-16 12:22:19,271 INFO inference instruct cost time 0.8019607067108154
+2025-04-16 12:22:19,271 INFO yield speech len 0.9984580498866213, rtf 0.8034179284952061
+2025-04-16 12:22:20,038 INFO inference instruct cost time 0.7663109302520752
+2025-04-16 12:22:20,038 INFO yield speech len 0.9984580498866213, rtf 0.7677419901673876
+2025-04-16 12:22:20,835 INFO inference instruct cost time 0.7964465618133545
+2025-04-16 12:22:20,836 INFO yield speech len 0.9984580498866213, rtf 0.7978902534083572
+2025-04-16 12:22:21,614 INFO inference instruct cost time 0.7780246734619141
+2025-04-16 12:22:21,614 INFO yield speech len 0.9984580498866213, rtf 0.7794110223564298
+2025-04-16 12:22:22,424 INFO inference instruct cost time 0.8094758987426758
+2025-04-16 12:22:22,425 INFO yield speech len 0.9984580498866213, rtf 0.8109311156278086
+2025-04-16 12:22:23,182 INFO inference instruct cost time 0.7570168972015381
+2025-04-16 12:22:23,183 INFO yield speech len 0.9984580498866213, rtf 0.758502374641424
+2025-04-16 12:22:23,830 INFO  encode text: 0.0054700374603271484, embedding 2.1457672119140625e-05, prompt speech 0.00019812583923339844, decode 6.495672702789307
+2025-04-16 12:22:23,885 INFO inference instruct cost time 0.7017478942871094
+2025-04-16 12:22:23,885 INFO yield speech len 0.9984580498866213, rtf 0.7030104768873994
+2025-04-16 12:22:24,065 INFO inference instruct cost time 0.17978644371032715
+2025-04-16 12:22:24,066 INFO yield speech len 0.7430385487528345, rtf 0.24221653802669607
+2025-04-16 12:22:24,066 INFO instruct_text_norm: 0.0011165142059326172, frontend_instruct: 0.00402379035949707
+100%|██████████| 1/1 [00:06<00:00,  6.74s/it]100%|██████████| 1/1 [00:06<00:00,  6.74s/it]
+2025-04-16 12:23:21,963 INFO get instruct inference request
+2025-04-16 12:23:21,963 INFO inference instruct 9.298324584960938e-06
+2025-04-16 12:23:21,963 INFO send inference response
+cost time: 0.2833137512207031
+cost time: 0.3487255573272705
+cost time: 0.30238771438598633
+cost time: 0.342742919921875
+cost time: 0.3247082233428955
+cost time: 0.34575963020324707
+cost time: 0.31370043754577637
+cost time: 0.22786235809326172
+lock 7.224082946777344e-05, llm 6.557856559753418, stream 6.557848930358887, remain 0.1803417205810547
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:23:21,976 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:23:21,979 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:23:21,980 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:23:23,253 INFO inference instruct cost time 1.2733864784240723
+2025-04-16 12:23:23,254 INFO yield speech len 0.7662585034013606, rtf 1.6622225076637485
+2025-04-16 12:23:24,091 INFO inference instruct cost time 0.8369460105895996
+2025-04-16 12:23:24,092 INFO yield speech len 0.9984580498866213, rtf 0.8386060254388423
+2025-04-16 12:23:24,880 INFO inference instruct cost time 0.7866115570068359
+2025-04-16 12:23:24,880 INFO yield speech len 0.9984580498866213, rtf 0.7880777884058134
+2025-04-16 12:23:25,649 INFO inference instruct cost time 0.7679815292358398
+2025-04-16 12:23:25,649 INFO yield speech len 0.9984580498866213, rtf 0.7693917680055249
+2025-04-16 12:23:26,495 INFO inference instruct cost time 0.845463752746582
+2025-04-16 12:23:26,495 INFO yield speech len 0.9984580498866213, rtf 0.8469819491945727
+2025-04-16 12:23:27,300 INFO inference instruct cost time 0.8043606281280518
+2025-04-16 12:23:27,300 INFO yield speech len 0.9984580498866213, rtf 0.8058826856011915
+2025-04-16 12:23:28,148 INFO inference instruct cost time 0.8460512161254883
+2025-04-16 12:23:28,148 INFO yield speech len 0.9984580498866213, rtf 0.8475789161355689
+2025-04-16 12:23:28,985 INFO inference instruct cost time 0.8369588851928711
+2025-04-16 12:23:28,985 INFO yield speech len 0.9984580498866213, rtf 0.8384620370126741
+2025-04-16 12:23:29,767 INFO inference instruct cost time 0.7807235717773438
+2025-04-16 12:23:29,767 INFO yield speech len 0.9984580498866213, rtf 0.7821269831511863
+2025-04-16 12:23:29,847 INFO  encode text: 0.005604267120361328, embedding 2.288818359375e-05, prompt speech 0.0001933574676513672, decode 7.8591837882995605
+2025-04-16 12:23:30,022 INFO inference instruct cost time 0.2543759346008301
+2025-04-16 12:23:30,022 INFO yield speech len 0.9636281179138322, rtf 0.2641833841755807
+2025-04-16 12:23:30,023 INFO instruct_text_norm: 0.0010013580322265625, frontend_instruct: 0.0036826133728027344
+100%|██████████| 1/1 [00:08<00:00,  8.05s/it]100%|██████████| 1/1 [00:08<00:00,  8.05s/it]
+2025-04-16 12:26:38,569 INFO get instruct inference request
+2025-04-16 12:26:38,569 INFO inference instruct 1.2636184692382812e-05
+2025-04-16 12:26:38,569 INFO send inference response
+cost time: 0.3567020893096924
+cost time: 0.3618946075439453
+cost time: 0.30277419090270996
+cost time: 0.31467175483703613
+cost time: 0.3518657684326172
+cost time: 0.3106956481933594
+cost time: 0.3820810317993164
+cost time: 0.3831498622894287
+cost time: 0.3169395923614502
+lock 6.0558319091796875e-05, llm 7.867994785308838, stream 7.867981195449829, remain 0.17437195777893066
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:26:38,585 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:26:38,595 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:26:38,595 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:26:39,811 INFO inference instruct cost time 1.215775489807129
+2025-04-16 12:26:39,812 INFO yield speech len 0.7662585034013606, rtf 1.5871786618266592
+2025-04-16 12:26:40,623 INFO inference instruct cost time 0.810950517654419
+2025-04-16 12:26:40,623 INFO yield speech len 0.9984580498866213, rtf 0.8124380989736596
+2025-04-16 12:26:41,442 INFO inference instruct cost time 0.8178842067718506
+2025-04-16 12:26:41,442 INFO yield speech len 0.9984580498866213, rtf 0.8193540803784894
+2025-04-16 12:26:42,253 INFO inference instruct cost time 0.8102319240570068
+2025-04-16 12:26:42,253 INFO yield speech len 0.9984580498866213, rtf 0.8118081794575203
+2025-04-16 12:26:43,034 INFO inference instruct cost time 0.7803566455841064
+2025-04-16 12:26:43,035 INFO yield speech len 0.9984580498866213, rtf 0.7817826526196197
+2025-04-16 12:26:43,779 INFO inference instruct cost time 0.743823766708374
+2025-04-16 12:26:43,779 INFO yield speech len 0.9984580498866213, rtf 0.7451983693943813
+2025-04-16 12:26:44,601 INFO inference instruct cost time 0.8209466934204102
+2025-04-16 12:26:44,601 INFO yield speech len 0.9984580498866213, rtf 0.8224103123296138
+2025-04-16 12:26:45,447 INFO inference instruct cost time 0.8455185890197754
+2025-04-16 12:26:45,447 INFO yield speech len 0.9984580498866213, rtf 0.8470585997497966
+2025-04-16 12:26:45,585 INFO  encode text: 0.005417346954345703, embedding 2.3365020751953125e-05, prompt speech 0.000110626220703125, decode 6.982607841491699
+2025-04-16 12:26:45,761 INFO inference instruct cost time 0.3132331371307373
+2025-04-16 12:26:45,761 INFO yield speech len 1.1493877551020408, rtf 0.272705511782657
+2025-04-16 12:26:45,762 INFO instruct_text_norm: 0.0011539459228515625, frontend_instruct: 0.010429620742797852
+100%|██████████| 1/1 [00:07<00:00,  7.18s/it]100%|██████████| 1/1 [00:07<00:00,  7.18s/it]
+2025-04-16 12:27:33,359 INFO get instruct inference request
+2025-04-16 12:27:33,359 INFO inference instruct 9.775161743164062e-06
+2025-04-16 12:27:33,359 INFO send inference response
+cost time: 0.3271918296813965
+cost time: 0.3571760654449463
+cost time: 0.37440013885498047
+cost time: 0.3567373752593994
+cost time: 0.3267502784729004
+cost time: 0.29022979736328125
+cost time: 0.34724855422973633
+cost time: 0.3612232208251953
+lock 9.202957153320312e-05, llm 6.993011236190796, stream 6.993000745773315, remain 0.17288494110107422
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:27:33,378 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:27:33,382 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:27:33,382 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:27:34,541 INFO inference instruct cost time 1.1581916809082031
+2025-04-16 12:27:34,541 INFO yield speech len 0.7662585034013606, rtf 1.5118796759369697
+2025-04-16 12:27:35,400 INFO inference instruct cost time 0.858238935470581
+2025-04-16 12:27:35,400 INFO yield speech len 0.9984580498866213, rtf 0.859791427027694
+2025-04-16 12:27:36,186 INFO inference instruct cost time 0.7850525379180908
+2025-04-16 12:27:36,186 INFO yield speech len 0.9984580498866213, rtf 0.7865734317145029
+2025-04-16 12:27:37,018 INFO inference instruct cost time 0.8313961029052734
+2025-04-16 12:27:37,018 INFO yield speech len 0.9984580498866213, rtf 0.8328854106366634
+2025-04-16 12:27:37,796 INFO inference instruct cost time 0.7767179012298584
+2025-04-16 12:27:37,796 INFO yield speech len 0.9984580498866213, rtf 0.778152854831586
+2025-04-16 12:27:38,547 INFO inference instruct cost time 0.751131534576416
+2025-04-16 12:27:38,548 INFO yield speech len 0.9984580498866213, rtf 0.7524873357439457
+2025-04-16 12:27:39,359 INFO inference instruct cost time 0.8105854988098145
+2025-04-16 12:27:39,359 INFO yield speech len 0.9984580498866213, rtf 0.812069889764453
+2025-04-16 12:27:40,112 INFO inference instruct cost time 0.7519726753234863
+2025-04-16 12:27:40,112 INFO yield speech len 0.9984580498866213, rtf 0.753358191117471
+2025-04-16 12:27:40,118 INFO  encode text: 0.005318164825439453, embedding 2.2411346435546875e-05, prompt speech 0.0002529621124267578, decode 6.728358507156372
+2025-04-16 12:27:40,288 INFO inference instruct cost time 0.17613697052001953
+2025-04-16 12:27:40,289 INFO yield speech len 0.8707482993197279, rtf 0.20249888487160206
+2025-04-16 12:27:40,289 INFO instruct_text_norm: 0.001087188720703125, frontend_instruct: 0.003988981246948242
+100%|██████████| 1/1 [00:06<00:00,  6.91s/it]100%|██████████| 1/1 [00:06<00:00,  6.91s/it]
+2025-04-16 12:29:01,780 INFO get instruct inference request
+2025-04-16 12:29:01,780 INFO inference instruct 1.3113021850585938e-05
+2025-04-16 12:29:01,780 INFO send inference response
+cost time: 0.2805182933807373
+cost time: 0.40461230278015137
+cost time: 0.3515625
+cost time: 0.3574192523956299
+cost time: 0.34351181983947754
+cost time: 0.3075699806213379
+cost time: 0.33673596382141113
+cost time: 0.30844593048095703
+lock 6.794929504394531e-05, llm 6.7394938468933105, stream 6.739484786987305, remain 0.16660714149475098
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:29:01,796 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:29:01,799 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:29:01,800 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:29:03,030 INFO inference instruct cost time 1.2302041053771973
+2025-04-16 12:29:03,030 INFO yield speech len 0.7662585034013606, rtf 1.6057995296168055
+2025-04-16 12:29:03,780 INFO inference instruct cost time 0.7495250701904297
+2025-04-16 12:29:03,780 INFO yield speech len 0.9984580498866213, rtf 0.750872659561939
+2025-04-16 12:29:04,505 INFO inference instruct cost time 0.7238502502441406
+2025-04-16 12:29:04,505 INFO yield speech len 0.9984580498866213, rtf 0.7251920969073855
+2025-04-16 12:29:05,366 INFO inference instruct cost time 0.8602278232574463
+2025-04-16 12:29:05,366 INFO yield speech len 0.9984580498866213, rtf 0.8617501949544909
+2025-04-16 12:29:06,103 INFO inference instruct cost time 0.7364223003387451
+2025-04-16 12:29:06,104 INFO yield speech len 0.9984580498866213, rtf 0.7381897387203089
+2025-04-16 12:29:06,950 INFO inference instruct cost time 0.8454833030700684
+2025-04-16 12:29:06,951 INFO yield speech len 0.9984580498866213, rtf 0.847036631366368
+2025-04-16 12:29:07,712 INFO inference instruct cost time 0.7593047618865967
+2025-04-16 12:29:07,712 INFO yield speech len 0.9984580498866213, rtf 0.7606820203363895
+2025-04-16 12:29:08,535 INFO inference instruct cost time 0.8217604160308838
+2025-04-16 12:29:08,535 INFO yield speech len 0.9984580498866213, rtf 0.8232668404965553
+2025-04-16 12:29:08,830 INFO  encode text: 0.0054798126220703125, embedding 2.3126602172851562e-05, prompt speech 7.224082946777344e-05, decode 7.022834539413452
+2025-04-16 12:29:08,980 INFO inference instruct cost time 0.4438307285308838
+2025-04-16 12:29:08,980 INFO yield speech len 1.3699773242630386, rtf 0.3241242852724962
+2025-04-16 12:29:08,981 INFO instruct_text_norm: 0.0012357234954833984, frontend_instruct: 0.00368499755859375
+100%|██████████| 1/1 [00:07<00:00,  7.18s/it]100%|██████████| 1/1 [00:07<00:00,  7.18s/it]
+2025-04-16 12:31:51,603 INFO get instruct inference request
+2025-04-16 12:31:51,604 INFO inference instruct 9.298324584960938e-06
+2025-04-16 12:31:51,604 INFO send inference response
+cost time: 0.3833141326904297
+cost time: 0.3060750961303711
+cost time: 0.28061461448669434
+cost time: 0.3459892272949219
+cost time: 0.2830677032470703
+cost time: 0.3717005252838135
+cost time: 0.3041200637817383
+cost time: 0.3476998805999756
+lock 6.4849853515625e-05, llm 7.037773132324219, stream 7.037763595581055, remain 0.14235377311706543
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:31:51,619 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:31:51,622 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:31:51,623 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:31:52,844 INFO inference instruct cost time 1.2208621501922607
+2025-04-16 12:31:52,844 INFO yield speech len 0.7662585034013606, rtf 1.5938409286635842
+2025-04-16 12:31:53,629 INFO inference instruct cost time 0.7838165760040283
+2025-04-16 12:31:53,629 INFO yield speech len 0.9984580498866213, rtf 0.7852584329368762
+2025-04-16 12:31:54,460 INFO inference instruct cost time 0.8297374248504639
+2025-04-16 12:31:54,460 INFO yield speech len 0.9984580498866213, rtf 0.8312657199323523
+2025-04-16 12:31:55,260 INFO inference instruct cost time 0.798485279083252
+2025-04-16 12:31:55,260 INFO yield speech len 0.9984580498866213, rtf 0.7999650717084837
+2025-04-16 12:31:56,121 INFO inference instruct cost time 0.8603549003601074
+2025-04-16 12:31:56,121 INFO yield speech len 0.9984580498866213, rtf 0.8619249868748147
+2025-04-16 12:31:56,881 INFO inference instruct cost time 0.7590129375457764
+2025-04-16 12:31:56,881 INFO yield speech len 0.9984580498866213, rtf 0.7604107585584008
+2025-04-16 12:31:57,751 INFO inference instruct cost time 0.8684518337249756
+2025-04-16 12:31:57,751 INFO yield speech len 0.9984580498866213, rtf 0.8704437051228312
+2025-04-16 12:31:58,563 INFO inference instruct cost time 0.8108935356140137
+2025-04-16 12:31:58,564 INFO yield speech len 0.9984580498866213, rtf 0.8124894381305853
+2025-04-16 12:31:58,673 INFO  encode text: 0.0056078433990478516, embedding 2.4557113647460938e-05, prompt speech 0.00023818016052246094, decode 7.042240858078003
+2025-04-16 12:31:58,848 INFO inference instruct cost time 0.2833390235900879
+2025-04-16 12:31:58,848 INFO yield speech len 1.0216780045351475, rtf 0.2775289811490273
+2025-04-16 12:31:58,848 INFO instruct_text_norm: 0.0010724067687988281, frontend_instruct: 0.003953456878662109
+100%|██████████| 1/1 [00:07<00:00,  7.23s/it]100%|██████████| 1/1 [00:07<00:00,  7.23s/it]
+2025-04-16 12:33:05,775 INFO get instruct inference request
+2025-04-16 12:33:05,775 INFO inference instruct 1.1682510375976562e-05
+2025-04-16 12:33:05,775 INFO send inference response
+cost time: 0.35218048095703125
+cost time: 0.3200643062591553
+cost time: 0.37620067596435547
+cost time: 0.3349907398223877
+cost time: 0.3358628749847412
+cost time: 0.3055245876312256
+cost time: 0.3846473693847656
+cost time: 0.34711170196533203
+lock 6.508827209472656e-05, llm 7.051483154296875, stream 7.05147123336792, remain 0.17307400703430176
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 12:33:05,787 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:33:05,790 INFO instruct_text 高兴<endofprompt>
+2025-04-16 12:33:05,790 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 12:33:07,049 INFO inference instruct cost time 1.2585558891296387
+2025-04-16 12:33:07,049 INFO yield speech len 0.7662585034013606, rtf 1.6427518990398806
+2025-04-16 12:33:07,812 INFO inference instruct cost time 0.7614579200744629
+2025-04-16 12:33:07,812 INFO yield speech len 0.9984580498866213, rtf 0.7629703140146163
+2025-04-16 12:33:08,588 INFO inference instruct cost time 0.774709939956665
+2025-04-16 12:33:08,588 INFO yield speech len 0.9984580498866213, rtf 0.7761608955428697
+2025-04-16 12:33:09,400 INFO inference instruct cost time 0.8102874755859375
+2025-04-16 12:33:09,400 INFO yield speech len 0.9984580498866213, rtf 0.8117608996757933
+2025-04-16 12:33:10,191 INFO inference instruct cost time 0.7902567386627197
+2025-04-16 12:33:10,191 INFO yield speech len 0.9984580498866213, rtf 0.7917488963061641
+2025-04-16 12:33:11,017 INFO inference instruct cost time 0.824786901473999
+2025-04-16 12:33:11,017 INFO yield speech len 0.9984580498866213, rtf 0.8262741211585181
+2025-04-16 12:33:11,872 INFO inference instruct cost time 0.8542258739471436
+2025-04-16 12:33:11,872 INFO yield speech len 0.9984580498866213, rtf 0.8557542589991245
+2025-04-16 12:33:12,667 INFO inference instruct cost time 0.794487476348877
+2025-04-16 12:33:12,667 INFO yield speech len 0.9984580498866213, rtf 0.7959166807014235
+2025-04-16 12:33:13,457 INFO inference instruct cost time 0.7889406681060791
+2025-04-16 12:33:13,457 INFO yield speech len 0.9984580498866213, rtf 0.7903885280410218
+2025-04-16 12:33:13,498 INFO  encode text: 0.005438804626464844, embedding 2.3365020751953125e-05, prompt speech 7.343292236328125e-05, decode 7.70078182220459
+2025-04-16 12:33:13,682 INFO inference instruct cost time 0.22477436065673828
+2025-04-16 12:33:13,682 INFO yield speech len 0.8823582766439909, rtf 0.25497592287138104
+2025-04-16 12:33:13,683 INFO instruct_text_norm: 0.0010385513305664062, frontend_instruct: 0.003365755081176758
+100%|██████████| 1/1 [00:07<00:00,  7.90s/it]100%|██████████| 1/1 [00:07<00:00,  7.90s/it]
+2025-04-16 14:17:38,540 INFO get instruct inference request
+2025-04-16 14:17:38,541 INFO inference instruct 1.2636184692382812e-05
+2025-04-16 14:17:38,541 INFO send inference response
+cost time: 0.35112714767456055
+cost time: 0.28788256645202637
+cost time: 0.27062058448791504
+cost time: 0.30643439292907715
+cost time: 0.2763485908508301
+cost time: 0.3311488628387451
+cost time: 0.3405497074127197
+cost time: 0.30074024200439453
+cost time: 0.2948486804962158
+lock 6.461143493652344e-05, llm 7.716789722442627, stream 7.716778755187988, remain 0.17519068717956543
+2025-04-16 14:17:38,556 INFO get instruct inference request
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 14:17:38,557 INFO inference instruct 1.6689300537109375e-05
+2025-04-16 14:17:38,558 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 14:17:38,558 INFO send inference response
+
+2025-04-16 14:17:38,558 INFO get instruct inference request
+  0%|          | 0/1 [00:00<?, ?it/s][A2025-04-16 14:17:38,559 INFO get instruct inference request
+2025-04-16 14:17:38,576 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:17:38,576 INFO inference instruct 1.71661376953125e-05
+2025-04-16 14:17:38,576 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 14:17:38,577 INFO inference instruct 1.1444091796875e-05
+2025-04-16 14:17:38,577 INFO send inference response
+2025-04-16 14:17:38,579 INFO send inference response
+
+
+2025-04-16 14:17:38,606 INFO instruct_text 高兴<endofprompt>
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2025-04-16 14:17:38,609 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+
+
+
+2025-04-16 14:17:38,609 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A2025-04-16 14:17:38,610 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 14:17:38,611 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 14:17:38,613 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:17:38,614 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:17:38,616 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+2025-04-16 14:17:38,616 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈![laughter]。
+[[04/16/2025-14:17:44] 04/16/2025-14:17:44] [04/16/2025-14:17:44] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)[TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+
+[TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:44] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:44] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:45] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:17:45,409 INFO inference instruct cost time 6.8000218868255615
+2025-04-16 14:17:45,409 INFO yield speech len 0.7662585034013606, rtf 8.874723448587412
+2025-04-16 14:17:45,753 INFO inference instruct cost time 7.143726348876953
+2025-04-16 14:17:45,754 INFO yield speech len 0.7662585034013606, rtf 9.323585431345483
+/data/codes/CosyVoice/runtime/python/grpc/server_stream.py:87: RuntimeWarning: invalid value encountered in cast
+  response.tts_audio = (i['tts_speech'].numpy() * (2 ** 15)).astype(np.int16).tobytes()
+2025-04-16 14:17:45,821 INFO inference instruct cost time 7.204416990280151
+2025-04-16 14:17:45,821 INFO yield speech len 0.7662585034013606, rtf 9.402392904104834
+2025-04-16 14:17:45,828 INFO inference instruct cost time 7.212421417236328
+2025-04-16 14:17:45,829 INFO yield speech len 0.7662585034013606, rtf 9.412638955241576
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:49] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:17:49,946 INFO inference instruct cost time 4.187737941741943
+2025-04-16 14:17:49,946 INFO yield speech len 0.9984580498866213, rtf 4.1944270298361435
+2025-04-16 14:17:49,995 INFO inference instruct cost time 4.165534973144531
+2025-04-16 14:17:49,996 INFO yield speech len 0.9984580498866213, rtf 4.17282399017537
+2025-04-16 14:17:50,021 INFO inference instruct cost time 4.610173225402832
+2025-04-16 14:17:50,022 INFO yield speech len 0.9984580498866213, rtf 4.617972925392001
+2025-04-16 14:17:50,391 INFO inference instruct cost time 4.5689921379089355
+2025-04-16 14:17:50,392 INFO yield speech len 0.9984580498866213, rtf 4.576406594863984
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:53] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:17:54,314 INFO inference instruct cost time 4.366146087646484
+2025-04-16 14:17:54,315 INFO yield speech len 0.9984580498866213, rtf 4.37395671859037
+2025-04-16 14:17:54,349 INFO inference instruct cost time 4.348906517028809
+2025-04-16 14:17:54,350 INFO yield speech len 0.9984580498866213, rtf 4.355976790687892
+2025-04-16 14:17:54,446 INFO inference instruct cost time 4.422927379608154
+2025-04-16 14:17:54,446 INFO yield speech len 0.9984580498866213, rtf 4.429852643570062
+2025-04-16 14:17:55,051 INFO inference instruct cost time 4.658043146133423
+2025-04-16 14:17:55,051 INFO yield speech len 0.9984580498866213, rtf 4.665435140216073
+[04/16/2025-14:17:58] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:17:58] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:17:58,431 INFO inference instruct cost time 4.115034818649292
+2025-04-16 14:17:58,431 INFO yield speech len 0.9984580498866213, rtf 4.121613539322171
+2025-04-16 14:17:58,660 INFO inference instruct cost time 4.308854818344116
+2025-04-16 14:17:58,660 INFO yield speech len 0.9984580498866213, rtf 4.315806885228254
+2025-04-16 14:17:58,735 INFO inference instruct cost time 4.287395477294922
+2025-04-16 14:17:58,735 INFO yield speech len 0.9984580498866213, rtf 4.294423051828216
+2025-04-16 14:17:59,757 INFO inference instruct cost time 4.70229172706604
+2025-04-16 14:17:59,757 INFO yield speech len 0.9984580498866213, rtf 4.7097761730858405
+[04/16/2025-14:18:02] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:02] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:18:02,848 INFO inference instruct cost time 4.415302991867065
+2025-04-16 14:18:02,848 INFO yield speech len 0.9984580498866213, rtf 4.422649401673224
+2025-04-16 14:18:03,060 INFO inference instruct cost time 4.397764682769775
+2025-04-16 14:18:03,060 INFO yield speech len 0.9984580498866213, rtf 4.405038638127058
+2025-04-16 14:18:03,183 INFO inference instruct cost time 4.44716477394104
+2025-04-16 14:18:03,184 INFO yield speech len 0.9984580498866213, rtf 4.4548786916705065
+2025-04-16 14:18:04,499 INFO inference instruct cost time 4.741085529327393
+2025-04-16 14:18:04,500 INFO yield speech len 0.9984580498866213, rtf 4.748898998530971
+[04/16/2025-14:18:06] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:06] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:06] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:06] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:07] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:07] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:07] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:07] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:18:07,496 INFO inference instruct cost time 4.646820306777954
+2025-04-16 14:18:07,497 INFO yield speech len 0.9984580498866213, rtf 4.654460022399245
+2025-04-16 14:18:07,613 INFO inference instruct cost time 4.551007032394409
+2025-04-16 14:18:07,614 INFO yield speech len 0.9984580498866213, rtf 4.558231100591636
+2025-04-16 14:18:07,665 INFO inference instruct cost time 4.478319883346558
+2025-04-16 14:18:07,665 INFO yield speech len 0.9984580498866213, rtf 4.4855331828774405
+2025-04-16 14:18:09,478 INFO inference instruct cost time 4.977007150650024
+2025-04-16 14:18:09,479 INFO yield speech len 0.9984580498866213, rtf 4.985004677004072
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:11] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+2025-04-16 14:18:12,347 INFO inference instruct cost time 4.8490235805511475
+2025-04-16 14:18:12,347 INFO yield speech len 0.9984580498866213, rtf 4.856782386534262
+2025-04-16 14:18:12,355 INFO inference instruct cost time 4.739092826843262
+2025-04-16 14:18:12,355 INFO yield speech len 0.9984580498866213, rtf 4.747070608184088
+2025-04-16 14:18:12,448 INFO inference instruct cost time 4.78049898147583
+2025-04-16 14:18:12,448 INFO yield speech len 0.9984580498866213, rtf 4.7881395458568665
+2025-04-16 14:18:14,183 INFO inference instruct cost time 4.703269004821777
+2025-04-16 14:18:14,183 INFO yield speech len 0.9984580498866213, rtf 4.71074755769223
+2025-04-16 14:18:14,815 INFO  encode text: 0.04987049102783203, embedding 0.0002834796905517578, prompt speech 0.0008606910705566406, decode 36.14654779434204
+2025-04-16 14:18:15,600 INFO  encode text: 0.042952775955200195, embedding 7.05718994140625e-05, prompt speech 0.00038552284240722656, decode 36.93641018867493
+2025-04-16 14:18:15,689 INFO  encode text: 0.013689994812011719, embedding 6.413459777832031e-05, prompt speech 0.0005230903625488281, decode 37.05913186073303
+2025-04-16 14:18:15,767 INFO inference instruct cost time 3.4173429012298584
+2025-04-16 14:18:15,767 INFO yield speech len 1.3815873015873017, rtf 2.473649489419425
+2025-04-16 14:18:15,768 INFO instruct_text_norm: 0.0011310577392578125, frontend_instruct: 0.033204078674316406
+
+100%|██████████| 1/1 [00:37<00:00, 37.19s/it][A100%|██████████| 1/1 [00:37<00:00, 37.19s/it]
+2025-04-16 14:18:16,173 INFO inference instruct cost time 3.81648588180542
+2025-04-16 14:18:16,174 INFO yield speech len 0.9984580498866213, rtf 3.822761859614835
+2025-04-16 14:18:16,328 INFO inference instruct cost time 3.8792312145233154
+2025-04-16 14:18:16,329 INFO yield speech len 0.9984580498866213, rtf 3.8856026591993
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+mem_utils.cpp:133: CHECK(status == cudaSuccess) failed. cudaMemcpy3DAsync failed.invalid argument
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:16] [TRT] [E] 1: [runner.cpp::executeMyelinGraph::833] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:16] [TRT] [E] 1: [checkMacros.cpp::catchCudaError::181] Error Code 1: Cuda Runtime (invalid argument)
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+[04/16/2025-14:18:16] [TRT] [E] 1: [graphContext.cpp::updateAndLoadGraph::32] Error Code 1: Myelin ([executor.cpp:myelinGraphLoad:778] Called with an already loaded binary graph.)
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+  deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+2025-04-16 14:33:20,179 INFO input frame rate=50
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:28: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+/data/codes/CosyVoice/runtime/python/grpc/../../../cosyvoice/dataset/processor.py:24: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+  torchaudio.set_audio_backend('soundfile')
+/home/ubuntu/miniconda3/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py:115: UserWarning: Specified provider 'CUDAExecutionProvider' is not in available provider names.Available providers: 'AzureExecutionProvider, CPUExecutionProvider'
+  warnings.warn(
+2025-04-16 14:33:24,029 WETEXT INFO building fst for zh_normalizer ...
+2025-04-16 14:33:24,029 INFO building fst for zh_normalizer ...
+2025-04-16 14:33:55,230 WETEXT INFO done
+2025-04-16 14:33:55,230 INFO done
+2025-04-16 14:33:55,230 WETEXT INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-04-16 14:33:55,230 INFO fst path: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_tagger.fst
+2025-04-16 14:33:55,230 WETEXT INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-04-16 14:33:55,230 INFO           /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/zh_tn_verbalizer.fst
+2025-04-16 14:33:55,235 WETEXT INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-04-16 14:33:55,235 INFO found existing fst: /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_tagger.fst
+2025-04-16 14:33:55,235 WETEXT INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-04-16 14:33:55,235 INFO                     /home/ubuntu/miniconda3/lib/python3.12/site-packages/tn/en_tn_verbalizer.fst
+2025-04-16 14:33:55,235 WETEXT INFO skip building fst for en_normalizer ...
+2025-04-16 14:33:55,235 INFO skip building fst for en_normalizer ...
+[04/16/2025-14:34:04] [TRT] [I] Loaded engine size: 340 MiB
+[04/16/2025-14:34:06] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +1598, now: CPU 0, GPU 1910 (MiB)
+2025-04-16 14:34:06,966 INFO grpc service initialized
+2025-04-16 14:34:06,968 INFO server listening on 0.0.0.0:50000
+2025-04-16 14:34:11,132 INFO get instruct inference request
+2025-04-16 14:34:11,132 INFO inference instruct 1.7404556274414062e-05
+2025-04-16 14:34:11,132 INFO send inference response
+failed to import ttsfrd, use WeTextProcessing instead
+Binding 0: Name = x, Shape = (-1, 80, -1)
+Binding 1: Name = mask, Shape = (-1, 1, -1)
+Binding 2: Name = mu, Shape = (-1, 80, -1)
+Binding 3: Name = t, Shape = (-1,)
+Binding 4: Name = spks, Shape = (-1, 80)
+Binding 5: Name = cond, Shape = (-1, 80, -1)
+Binding 6: Name = estimator_out, Shape = (-1, 80, -1)
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 14:34:11,158 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:34:11,159 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:34:11,160 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:34:14,128 INFO inference instruct cost time 2.968484878540039
+2025-04-16 14:34:14,129 INFO yield speech len 0.7662585034013606, rtf 3.8743153891780158
+2025-04-16 14:34:14,449 INFO inference instruct cost time 0.31993889808654785
+2025-04-16 14:34:14,449 INFO yield speech len 0.9984580498866213, rtf 0.32065410632640123
+2025-04-16 14:34:15,098 INFO inference instruct cost time 0.6476805210113525
+2025-04-16 14:34:15,098 INFO yield speech len 0.9984580498866213, rtf 0.6489231229521507
+2025-04-16 14:34:15,901 INFO inference instruct cost time 0.802363395690918
+2025-04-16 14:34:15,901 INFO yield speech len 0.9984580498866213, rtf 0.8039012329306366
+2025-04-16 14:34:16,017 INFO  encode text: 0.2942502498626709, embedding 9.059906005859375e-05, prompt speech 0.00019979476928710938, decode 4.218341112136841
+2025-04-16 14:34:16,190 INFO inference instruct cost time 0.28775930404663086
+2025-04-16 14:34:16,190 INFO yield speech len 1.0681179138321995, rtf 0.26961695757168147
+2025-04-16 14:34:16,191 INFO instruct_text_norm: 0.013724327087402344, frontend_instruct: 0.002071857452392578
+100%|██████████| 1/1 [00:05<00:00,  5.03s/it]100%|██████████| 1/1 [00:05<00:00,  5.03s/it]
+2025-04-16 14:34:39,758 INFO get instruct inference request
+2025-04-16 14:34:39,758 INFO inference instruct 1.4781951904296875e-05
+2025-04-16 14:34:39,758 INFO send inference response
+cost time: 1.2943499088287354
+cost time: 0.30977559089660645
+cost time: 0.35540008544921875
+cost time: 0.338482141494751
+lock 0.00013303756713867188, llm 4.862344980239868, stream 4.86230993270874, remain 0.1685011386871338
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 14:34:39,772 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:34:39,776 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:34:39,777 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:34:41,019 INFO inference instruct cost time 1.2426338195800781
+2025-04-16 14:34:41,020 INFO yield speech len 0.7662585034013606, rtf 1.6222464174709537
+2025-04-16 14:34:41,885 INFO inference instruct cost time 0.8646917343139648
+2025-04-16 14:34:41,885 INFO yield speech len 0.9984580498866213, rtf 0.8663363337820006
+2025-04-16 14:34:42,722 INFO inference instruct cost time 0.8353009223937988
+2025-04-16 14:34:42,722 INFO yield speech len 0.9984580498866213, rtf 0.83680939373322
+2025-04-16 14:34:43,529 INFO inference instruct cost time 0.8067593574523926
+2025-04-16 14:34:43,529 INFO yield speech len 0.9984580498866213, rtf 0.8082130057520645
+2025-04-16 14:34:44,349 INFO inference instruct cost time 0.8193411827087402
+2025-04-16 14:34:44,349 INFO yield speech len 0.9984580498866213, rtf 0.8208190372516943
+2025-04-16 14:34:45,098 INFO inference instruct cost time 0.748291015625
+2025-04-16 14:34:45,099 INFO yield speech len 0.9984580498866213, rtf 0.7497037982914683
+2025-04-16 14:34:45,962 INFO inference instruct cost time 0.8624923229217529
+2025-04-16 14:34:45,962 INFO yield speech len 0.9984580498866213, rtf 0.8641509572044015
+2025-04-16 14:34:46,248 INFO  encode text: 0.005653858184814453, embedding 2.288818359375e-05, prompt speech 7.200241088867188e-05, decode 6.464347839355469
+2025-04-16 14:34:46,505 INFO inference instruct cost time 0.5423123836517334
+2025-04-16 14:34:46,506 INFO yield speech len 1.2654875283446712, rtf 0.4287149304301914
+2025-04-16 14:34:46,506 INFO instruct_text_norm: 0.0011210441589355469, frontend_instruct: 0.0051538944244384766
+100%|██████████| 1/1 [00:06<00:00,  6.73s/it]100%|██████████| 1/1 [00:06<00:00,  6.73s/it]
+2025-04-16 14:44:08,707 INFO get instruct inference request
+2025-04-16 14:44:08,708 INFO inference instruct 1.9550323486328125e-05
+2025-04-16 14:44:08,708 INFO send inference response
+cost time: 0.3652622699737549
+cost time: 0.40105438232421875
+cost time: 0.391742467880249
+cost time: 0.3430800437927246
+cost time: 0.3356356620788574
+cost time: 0.29490065574645996
+cost time: 0.34714460372924805
+lock 7.200241088867188e-05, llm 6.477901458740234, stream 6.477867364883423, remain 0.2507791519165039
+  0%|          | 0/2 [00:00<?, ?it/s]2025-04-16 14:44:08,728 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:44:08,732 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:44:08,732 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:44:09,923 INFO inference instruct cost time 1.190507411956787
+2025-04-16 14:44:09,923 INFO yield speech len 0.7662585034013606, rtf 1.5539124438708478
+2025-04-16 14:44:10,674 INFO inference instruct cost time 0.7498645782470703
+2025-04-16 14:44:10,674 INFO yield speech len 0.9984580498866213, rtf 0.751223198549692
+2025-04-16 14:44:11,502 INFO inference instruct cost time 0.8273520469665527
+2025-04-16 14:44:11,502 INFO yield speech len 0.9984580498866213, rtf 0.8288396462841435
+2025-04-16 14:44:12,316 INFO inference instruct cost time 0.8137102127075195
+2025-04-16 14:44:12,316 INFO yield speech len 0.9984580498866213, rtf 0.8152245018674537
+2025-04-16 14:44:13,122 INFO inference instruct cost time 0.8052926063537598
+2025-04-16 14:44:13,122 INFO yield speech len 0.9984580498866213, rtf 0.8067296622970769
+2025-04-16 14:44:13,918 INFO inference instruct cost time 0.7951123714447021
+2025-04-16 14:44:13,918 INFO yield speech len 0.9984580498866213, rtf 0.7965676134538858
+2025-04-16 14:44:14,799 INFO inference instruct cost time 0.8786580562591553
+2025-04-16 14:44:14,799 INFO yield speech len 0.9984580498866213, rtf 0.8802521107501762
+2025-04-16 14:44:15,031 INFO  encode text: 0.005332469940185547, embedding 1.9788742065429688e-05, prompt speech 0.0004961490631103516, decode 6.291216135025024
+2025-04-16 14:44:15,206 INFO inference instruct cost time 0.40636730194091797
+2025-04-16 14:44:15,206 INFO yield speech len 1.242267573696145, rtf 0.32727071606319086
+2025-04-16 14:44:15,207 INFO instruct_text_norm: 0.001188039779663086, frontend_instruct: 0.004082202911376953
+ 50%|█████     | 1/2 [00:06<00:06,  6.48s/it]2025-04-16 14:44:15,207 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:44:15,208 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:44:15,208 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:44:16,459 INFO inference instruct cost time 1.2506299018859863
+2025-04-16 14:44:16,459 INFO yield speech len 0.7662585034013606, rtf 1.6323960132219573
+2025-04-16 14:44:17,271 INFO inference instruct cost time 0.8115551471710205
+2025-04-16 14:44:17,271 INFO yield speech len 0.9984580498866213, rtf 0.8130262308039291
+2025-04-16 14:44:18,095 INFO inference instruct cost time 0.8233077526092529
+2025-04-16 14:44:18,095 INFO yield speech len 0.9984580498866213, rtf 0.8248528622653941
+2025-04-16 14:44:18,995 INFO inference instruct cost time 0.8991012573242188
+2025-04-16 14:44:18,996 INFO yield speech len 0.9984580498866213, rtf 0.9015459215355127
+2025-04-16 14:44:19,806 INFO inference instruct cost time 0.8089382648468018
+2025-04-16 14:44:19,807 INFO yield speech len 0.9984580498866213, rtf 0.8104585565973159
+2025-04-16 14:44:20,655 INFO inference instruct cost time 0.8481729030609131
+2025-04-16 14:44:20,656 INFO yield speech len 0.9984580498866213, rtf 0.8497155802107828
+2025-04-16 14:44:21,046 INFO  encode text: 0.005677461624145508, embedding 2.5033950805664062e-05, prompt speech 0.00017690658569335938, decode 5.830535411834717
+2025-04-16 14:44:21,225 INFO inference instruct cost time 0.5690271854400635
+2025-04-16 14:44:21,226 INFO yield speech len 1.5209070294784581, rtf 0.37425524299210716
+2025-04-16 14:44:21,226 INFO instruct_text_norm: 0.001188039779663086, frontend_instruct: 0.0015087127685546875
+100%|██████████| 2/2 [00:12<00:00,  6.21s/it]100%|██████████| 2/2 [00:12<00:00,  6.25s/it]
+2025-04-16 14:45:37,009 INFO get instruct inference request
+2025-04-16 14:45:37,009 INFO inference instruct 1.239776611328125e-05
+2025-04-16 14:45:37,009 INFO send inference response
+cost time: 0.3030972480773926
+cost time: 0.2864108085632324
+cost time: 0.3537874221801758
+cost time: 0.33020687103271484
+cost time: 0.3317258358001709
+cost time: 0.31094956398010254
+cost time: 0.35466885566711426
+lock 7.486343383789062e-05, llm 6.308692932128906, stream 6.308674097061157, remain 0.16477084159851074
+cost time: 0.37312889099121094
+cost time: 0.34770894050598145
+cost time: 0.32931017875671387
+cost time: 0.41478943824768066
+cost time: 0.3552985191345215
+cost time: 0.38443946838378906
+lock 5.316734313964844e-05, llm 5.840328931808472, stream 5.840317726135254, remain 0.17675185203552246
+  0%|          | 0/3 [00:00<?, ?it/s]2025-04-16 14:45:37,049 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:45:37,052 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:45:37,052 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:45:38,156 INFO inference instruct cost time 1.10347318649292
+2025-04-16 14:45:38,156 INFO yield speech len 0.7662585034013606, rtf 1.4405540296469221
+2025-04-16 14:45:38,931 INFO inference instruct cost time 0.7740724086761475
+2025-04-16 14:45:38,931 INFO yield speech len 0.9984580498866213, rtf 0.7754796368698048
+2025-04-16 14:45:39,677 INFO inference instruct cost time 0.7447211742401123
+2025-04-16 14:45:39,678 INFO yield speech len 0.9984580498866213, rtf 0.7460687471943539
+2025-04-16 14:45:40,437 INFO inference instruct cost time 0.7587504386901855
+2025-04-16 14:45:40,437 INFO yield speech len 0.9984580498866213, rtf 0.7601507197589028
+2025-04-16 14:45:41,189 INFO inference instruct cost time 0.7513527870178223
+2025-04-16 14:45:41,189 INFO yield speech len 0.9984580498866213, rtf 0.7527180037699466
+2025-04-16 14:45:41,958 INFO inference instruct cost time 0.7682392597198486
+2025-04-16 14:45:41,958 INFO yield speech len 0.9984580498866213, rtf 0.7696525231653522
+2025-04-16 14:45:42,700 INFO inference instruct cost time 0.7414398193359375
+2025-04-16 14:45:42,700 INFO yield speech len 0.9984580498866213, rtf 0.7428415439113282
+2025-04-16 14:45:42,896 INFO  encode text: 0.005499362945556641, embedding 2.3603439331054688e-05, prompt speech 7.772445678710938e-05, decode 5.836222410202026
+2025-04-16 14:45:43,080 INFO inference instruct cost time 0.3788268566131592
+2025-04-16 14:45:43,080 INFO yield speech len 1.18421768707483, rtf 0.32006763195728555
+2025-04-16 14:45:43,081 INFO instruct_text_norm: 0.0011050701141357422, frontend_instruct: 0.003408193588256836
+ 33%|███▎      | 1/3 [00:06<00:12,  6.03s/it]2025-04-16 14:45:43,081 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:45:43,082 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:45:43,082 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:45:44,336 INFO inference instruct cost time 1.253415822982788
+2025-04-16 14:45:44,336 INFO yield speech len 0.7662585034013606, rtf 1.6362128461795773
+2025-04-16 14:45:45,147 INFO inference instruct cost time 0.810114860534668
+2025-04-16 14:45:45,147 INFO yield speech len 0.9984580498866213, rtf 0.8115767950711902
+2025-04-16 14:45:45,939 INFO inference instruct cost time 0.7909412384033203
+2025-04-16 14:45:45,939 INFO yield speech len 0.9984580498866213, rtf 0.7923967248305331
+2025-04-16 14:45:46,731 INFO inference instruct cost time 0.7918152809143066
+2025-04-16 14:45:46,732 INFO yield speech len 0.9984580498866213, rtf 0.7933260829642761
+2025-04-16 14:45:47,442 INFO inference instruct cost time 0.709270715713501
+2025-04-16 14:45:47,442 INFO yield speech len 0.9984580498866213, rtf 0.7109140803994134
+2025-04-16 14:45:48,232 INFO inference instruct cost time 0.7892546653747559
+2025-04-16 14:45:48,232 INFO yield speech len 0.9984580498866213, rtf 0.7908407901955206
+2025-04-16 14:45:49,051 INFO inference instruct cost time 0.8180873394012451
+2025-04-16 14:45:49,051 INFO yield speech len 0.9984580498866213, rtf 0.8196325057597701
+2025-04-16 14:45:49,797 INFO inference instruct cost time 0.7444007396697998
+2025-04-16 14:45:49,797 INFO yield speech len 0.9984580498866213, rtf 0.7457996344973528
+2025-04-16 14:45:50,612 INFO inference instruct cost time 0.8148009777069092
+2025-04-16 14:45:50,612 INFO yield speech len 0.9984580498866213, rtf 0.8163413076206695
+2025-04-16 14:45:50,854 INFO  encode text: 0.005733489990234375, embedding 2.4080276489257812e-05, prompt speech 0.00021910667419433594, decode 7.763496160507202
+2025-04-16 14:45:51,041 INFO inference instruct cost time 0.4277346134185791
+2025-04-16 14:45:51,041 INFO yield speech len 1.207437641723356, rtf 0.3544277681682545
+2025-04-16 14:45:51,042 INFO instruct_text_norm: 0.0011050701141357422, frontend_instruct: 0.0014729499816894531
+ 67%|██████▋   | 2/3 [00:13<00:07,  7.17s/it]2025-04-16 14:45:51,042 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:45:51,043 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:45:51,043 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:45:52,239 INFO inference instruct cost time 1.19547438621521
+2025-04-16 14:45:52,239 INFO yield speech len 0.7662585034013606, rtf 1.5604350059716539
+2025-04-16 14:45:53,052 INFO inference instruct cost time 0.812211275100708
+2025-04-16 14:45:53,052 INFO yield speech len 0.9984580498866213, rtf 0.8136580606142795
+2025-04-16 14:45:53,853 INFO inference instruct cost time 0.7998292446136475
+2025-04-16 14:45:53,853 INFO yield speech len 0.9984580498866213, rtf 0.8012793541257811
+2025-04-16 14:45:54,600 INFO inference instruct cost time 0.7463381290435791
+2025-04-16 14:45:54,600 INFO yield speech len 0.9984580498866213, rtf 0.7477022875316961
+2025-04-16 14:45:55,485 INFO inference instruct cost time 0.8835158348083496
+2025-04-16 14:45:55,485 INFO yield speech len 0.9984580498866213, rtf 0.8850765587805315
+2025-04-16 14:45:56,324 INFO inference instruct cost time 0.8391366004943848
+2025-04-16 14:45:56,324 INFO yield speech len 0.9984580498866213, rtf 0.8406345191043476
+2025-04-16 14:45:57,127 INFO inference instruct cost time 0.8020403385162354
+2025-04-16 14:45:57,127 INFO yield speech len 0.9984580498866213, rtf 0.803501742653722
+2025-04-16 14:45:57,930 INFO inference instruct cost time 0.8023347854614258
+2025-04-16 14:45:57,930 INFO yield speech len 0.9984580498866213, rtf 0.8037935400944809
+2025-04-16 14:45:58,694 INFO inference instruct cost time 0.7627966403961182
+2025-04-16 14:45:58,694 INFO yield speech len 0.9984580498866213, rtf 0.7645491721801633
+2025-04-16 14:45:59,176 INFO  encode text: 0.005654335021972656, embedding 2.3365020751953125e-05, prompt speech 0.0001728534698486328, decode 8.125404357910156
+2025-04-16 14:45:59,378 INFO inference instruct cost time 0.6828949451446533
+2025-04-16 14:45:59,378 INFO yield speech len 1.6021768707482993, rtf 0.42636574590173754
+2025-04-16 14:45:59,389 INFO instruct_text_norm: 0.0011050701141357422, frontend_instruct: 0.0012118816375732422
+100%|██████████| 3/3 [00:22<00:00,  7.71s/it]100%|██████████| 3/3 [00:22<00:00,  7.45s/it]
+2025-04-16 14:46:45,626 INFO get instruct inference request
+2025-04-16 14:46:45,626 INFO inference instruct 1.621246337890625e-05
+2025-04-16 14:46:45,626 INFO send inference response
+cost time: 0.2666645050048828
+cost time: 0.32064270973205566
+cost time: 0.3215017318725586
+cost time: 0.3153672218322754
+cost time: 0.31810784339904785
+cost time: 0.33486294746398926
+cost time: 0.28822755813598633
+lock 5.936622619628906e-05, llm 5.8495495319366455, stream 5.849536418914795, remain 0.17794370651245117
+cost time: 0.34574389457702637
+cost time: 0.3465564250946045
+cost time: 0.29691243171691895
+cost time: 0.31818079948425293
+cost time: 0.26588964462280273
+cost time: 0.3256673812866211
+cost time: 0.3742828369140625
+cost time: 0.31584739685058594
+cost time: 0.3308887481689453
+lock 5.2928924560546875e-05, llm 7.771809816360474, stream 7.771792650222778, remain 0.18681073188781738
+cost time: 0.3180263042449951
+cost time: 0.34853553771972656
+cost time: 0.32630228996276855
+cost time: 0.29268980026245117
+cost time: 0.3695683479309082
+cost time: 0.35451364517211914
+cost time: 0.33798742294311523
+cost time: 0.32856130599975586
+cost time: 0.27924680709838867
+lock 5.817413330078125e-05, llm 8.134747982025146, stream 8.134721517562866, remain 0.20993566513061523
+  0%|          | 0/4 [00:00<?, ?it/s]2025-04-16 14:46:45,677 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:46:45,680 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:46:45,681 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:46:46,874 INFO inference instruct cost time 1.1929371356964111
+2025-04-16 14:46:46,874 INFO yield speech len 0.7662585034013606, rtf 1.5571309422904793
+2025-04-16 14:46:47,699 INFO inference instruct cost time 0.8238074779510498
+2025-04-16 14:46:47,699 INFO yield speech len 0.9984580498866213, rtf 0.8253476284660919
+2025-04-16 14:46:48,490 INFO inference instruct cost time 0.7897400856018066
+2025-04-16 14:46:48,490 INFO yield speech len 0.9984580498866213, rtf 0.7912904256954789
+2025-04-16 14:46:49,307 INFO inference instruct cost time 0.8163797855377197
+2025-04-16 14:46:49,307 INFO yield speech len 0.9984580498866213, rtf 0.8178396946425701
+2025-04-16 14:46:50,092 INFO inference instruct cost time 0.7839064598083496
+2025-04-16 14:46:50,092 INFO yield speech len 0.9984580498866213, rtf 0.7853341283449946
+2025-04-16 14:46:50,873 INFO inference instruct cost time 0.7796933650970459
+2025-04-16 14:46:50,873 INFO yield speech len 0.9984580498866213, rtf 0.7811536882505861
+2025-04-16 14:46:51,646 INFO inference instruct cost time 0.7725644111633301
+2025-04-16 14:46:51,647 INFO yield speech len 0.9984580498866213, rtf 0.7740058448858732
+2025-04-16 14:46:51,994 INFO  encode text: 0.0054209232330322266, embedding 2.2411346435546875e-05, prompt speech 0.0002636909484863281, decode 6.304701089859009
+2025-04-16 14:46:52,192 INFO inference instruct cost time 0.5445566177368164
+2025-04-16 14:46:52,192 INFO yield speech len 1.4048072562358276, rtf 0.3877937585915909
+2025-04-16 14:46:52,192 INFO instruct_text_norm: 0.001056671142578125, frontend_instruct: 0.0036695003509521484
+ 25%|██▌       | 1/4 [00:06<00:19,  6.52s/it]2025-04-16 14:46:52,193 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:46:52,194 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:46:52,194 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:46:53,484 INFO inference instruct cost time 1.2892377376556396
+2025-04-16 14:46:53,484 INFO yield speech len 0.7662585034013606, rtf 1.6828950748524882
+2025-04-16 14:46:54,250 INFO inference instruct cost time 0.7650578022003174
+2025-04-16 14:46:54,250 INFO yield speech len 0.9984580498866213, rtf 0.7664675851417488
+2025-04-16 14:46:55,067 INFO inference instruct cost time 0.8164548873901367
+2025-04-16 14:46:55,067 INFO yield speech len 0.9984580498866213, rtf 0.8180039799447323
+2025-04-16 14:46:55,806 INFO inference instruct cost time 0.7380177974700928
+2025-04-16 14:46:55,806 INFO yield speech len 0.9984580498866213, rtf 0.739371494476705
+2025-04-16 14:46:56,666 INFO inference instruct cost time 0.8590013980865479
+2025-04-16 14:46:56,666 INFO yield speech len 0.9984580498866213, rtf 0.860612375964952
+2025-04-16 14:46:57,417 INFO inference instruct cost time 0.750108003616333
+2025-04-16 14:46:57,417 INFO yield speech len 0.9984580498866213, rtf 0.751472491944252
+2025-04-16 14:46:58,258 INFO inference instruct cost time 0.8396685123443604
+2025-04-16 14:46:58,258 INFO yield speech len 0.9984580498866213, rtf 0.8411889819991449
+2025-04-16 14:46:59,079 INFO inference instruct cost time 0.8195536136627197
+2025-04-16 14:46:59,079 INFO yield speech len 0.9984580498866213, rtf 0.8210131709009062
+2025-04-16 14:46:59,890 INFO inference instruct cost time 0.809697151184082
+2025-04-16 14:46:59,890 INFO yield speech len 0.9984580498866213, rtf 0.8111742005661823
+2025-04-16 14:47:00,604 INFO inference instruct cost time 0.7133500576019287
+2025-04-16 14:47:00,605 INFO yield speech len 0.9984580498866213, rtf 0.7149858725105607
+2025-04-16 14:47:00,716 INFO  encode text: 0.005509376525878906, embedding 2.3365020751953125e-05, prompt speech 8.511543273925781e-05, decode 8.514132976531982
+2025-04-16 14:47:00,910 INFO inference instruct cost time 0.30391407012939453
+2025-04-16 14:47:00,910 INFO yield speech len 1.0448979591836736, rtf 0.2910633571445942
+2025-04-16 14:47:00,910 INFO instruct_text_norm: 0.001056671142578125, frontend_instruct: 0.0017743110656738281
+ 50%|█████     | 2/4 [00:15<00:15,  7.81s/it]2025-04-16 14:47:00,911 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:47:00,912 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:47:00,912 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:47:02,130 INFO inference instruct cost time 1.2180354595184326
+2025-04-16 14:47:02,131 INFO yield speech len 0.7662585034013606, rtf 1.5901896255937489
+2025-04-16 14:47:02,929 INFO inference instruct cost time 0.7976062297821045
+2025-04-16 14:47:02,929 INFO yield speech len 0.9984580498866213, rtf 0.7990545777300763
+2025-04-16 14:47:03,791 INFO inference instruct cost time 0.8606457710266113
+2025-04-16 14:47:03,791 INFO yield speech len 0.9984580498866213, rtf 0.8622189333965612
+2025-04-16 14:47:04,625 INFO inference instruct cost time 0.8333401679992676
+2025-04-16 14:47:04,625 INFO yield speech len 0.9984580498866213, rtf 0.834840357975038
+2025-04-16 14:47:05,443 INFO inference instruct cost time 0.8171594142913818
+2025-04-16 14:47:05,443 INFO yield speech len 0.9984580498866213, rtf 0.8186410630641635
+2025-04-16 14:47:06,235 INFO inference instruct cost time 0.7913751602172852
+2025-04-16 14:47:06,236 INFO yield speech len 0.9984580498866213, rtf 0.7928473154775971
+2025-04-16 14:47:07,045 INFO inference instruct cost time 0.8077104091644287
+2025-04-16 14:47:07,045 INFO yield speech len 0.9984580498866213, rtf 0.8091901212410871
+2025-04-16 14:47:07,806 INFO inference instruct cost time 0.7607793807983398
+2025-04-16 14:47:07,806 INFO yield speech len 0.9984580498866213, rtf 0.7621500814376875
+2025-04-16 14:47:08,662 INFO inference instruct cost time 0.8547754287719727
+2025-04-16 14:47:08,662 INFO yield speech len 0.9984580498866213, rtf 0.8562922456063503
+2025-04-16 14:47:09,458 INFO inference instruct cost time 0.7958881855010986
+2025-04-16 14:47:09,459 INFO yield speech len 0.9984580498866213, rtf 0.7973510728672493
+2025-04-16 14:47:10,287 INFO inference instruct cost time 0.8273684978485107
+2025-04-16 14:47:10,287 INFO yield speech len 0.9984580498866213, rtf 0.8288642413221126
+2025-04-16 14:47:10,620 INFO  encode text: 0.0056383609771728516, embedding 2.4318695068359375e-05, prompt speech 0.00012111663818359375, decode 9.700750350952148
+2025-04-16 14:47:10,823 INFO inference instruct cost time 0.5353665351867676
+2025-04-16 14:47:10,823 INFO yield speech len 1.3699773242630386, rtf 0.39092279355025894
+2025-04-16 14:47:10,824 INFO instruct_text_norm: 0.001056671142578125, frontend_instruct: 0.0013744831085205078
+ 75%|███████▌  | 3/4 [00:25<00:08,  8.77s/it]2025-04-16 14:47:10,824 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:47:10,825 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:47:10,825 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:47:11,989 INFO inference instruct cost time 1.163863182067871
+2025-04-16 14:47:11,989 INFO yield speech len 0.7662585034013606, rtf 1.5194097300991416
+2025-04-16 14:47:12,857 INFO inference instruct cost time 0.8665032386779785
+2025-04-16 14:47:12,857 INFO yield speech len 0.9984580498866213, rtf 0.8683593353516487
+2025-04-16 14:47:13,686 INFO inference instruct cost time 0.8275296688079834
+2025-04-16 14:47:13,686 INFO yield speech len 0.9984580498866213, rtf 0.8290242284622996
+2025-04-16 14:47:14,497 INFO inference instruct cost time 0.8106827735900879
+2025-04-16 14:47:14,497 INFO yield speech len 0.9984580498866213, rtf 0.8121565693642857
+2025-04-16 14:47:15,272 INFO inference instruct cost time 0.7741823196411133
+2025-04-16 14:47:15,272 INFO yield speech len 0.9984580498866213, rtf 0.7755856581985258
+2025-04-16 14:47:16,020 INFO inference instruct cost time 0.747035026550293
+2025-04-16 14:47:16,020 INFO yield speech len 0.9984580498866213, rtf 0.748412916978258
+2025-04-16 14:47:16,786 INFO inference instruct cost time 0.7652420997619629
+2025-04-16 14:47:16,786 INFO yield speech len 0.9984580498866213, rtf 0.7666650618058304
+2025-04-16 14:47:17,644 INFO inference instruct cost time 0.8574881553649902
+2025-04-16 14:47:17,645 INFO yield speech len 0.9984580498866213, rtf 0.8590702909629705
+2025-04-16 14:47:17,724 INFO  encode text: 0.005534648895263672, embedding 2.193450927734375e-05, prompt speech 7.295608520507812e-05, decode 6.891260623931885
+2025-04-16 14:47:17,924 INFO inference instruct cost time 0.2764873504638672
+2025-04-16 14:47:17,924 INFO yield speech len 1.0100680272108844, rtf 0.273959431797266
+2025-04-16 14:47:17,925 INFO instruct_text_norm: 0.001056671142578125, frontend_instruct: 0.001371145248413086
+100%|██████████| 4/4 [00:32<00:00,  8.11s/it]100%|██████████| 4/4 [00:32<00:00,  8.06s/it]
+2025-04-16 14:48:15,371 INFO get instruct inference request
+2025-04-16 14:48:15,371 INFO inference instruct 1.049041748046875e-05
+2025-04-16 14:48:15,371 INFO send inference response
+cost time: 0.3360295295715332
+cost time: 0.3803293704986572
+cost time: 0.3362243175506592
+cost time: 0.35289645195007324
+cost time: 0.3301537036895752
+cost time: 0.3061511516571045
+cost time: 0.2786126136779785
+lock 6.198883056640625e-05, llm 6.31863808631897, stream 6.318600654602051, remain 0.19215750694274902
+cost time: 0.34766507148742676
+cost time: 0.29029059410095215
+cost time: 0.32279300689697266
+cost time: 0.27453088760375977
+cost time: 0.3449573516845703
+cost time: 0.2757270336151123
+cost time: 0.3559091091156006
+cost time: 0.36597633361816406
+cost time: 0.36629152297973633
+cost time: 0.2902493476867676
+lock 6.628036499023438e-05, llm 8.521612167358398, stream 8.521589040756226, remain 0.193681001663208
+cost time: 0.3408198356628418
+cost time: 0.31418395042419434
+cost time: 0.3768599033355713
+cost time: 0.3696563243865967
+cost time: 0.34360170364379883
+cost time: 0.3278653621673584
+cost time: 0.3098628520965576
+cost time: 0.30745577812194824
+cost time: 0.36104726791381836
+cost time: 0.33209848403930664
+cost time: 0.34339261054992676
+lock 5.435943603515625e-05, llm 9.71758508682251, stream 9.717557907104492, remain 0.19331574440002441
+cost time: 0.296689510345459
+cost time: 0.36246633529663086
+cost time: 0.35364317893981934
+cost time: 0.345172643661499
+cost time: 0.3310694694519043
+cost time: 0.2713754177093506
+cost time: 0.28137969970703125
+cost time: 0.3696882724761963
+lock 4.863739013671875e-05, llm 6.902202367782593, stream 6.902189016342163, remain 0.196610689163208
+  0%|          | 0/5 [00:00<?, ?it/s]2025-04-16 14:48:15,441 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:48:15,450 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:48:15,451 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 14:48:16,626 INFO inference instruct cost time 1.174997329711914
+2025-04-16 14:48:16,626 INFO yield speech len 0.7662585034013606, rtf 1.5338988847691903
+2025-04-16 14:48:17,405 INFO inference instruct cost time 0.7779407501220703
+2025-04-16 14:48:17,405 INFO yield speech len 0.9984580498866213, rtf 0.7793928745614235
+2025-04-16 14:48:18,197 INFO inference instruct cost time 0.7911970615386963
+2025-04-16 14:48:18,198 INFO yield speech len 0.9984580498866213, rtf 0.7926419588498944
+2025-04-16 14:48:18,962 INFO inference instruct cost time 0.7632381916046143
+2025-04-16 14:48:18,962 INFO yield speech len 0.9984580498866213, rtf 0.7646277330295984
+2025-04-16 14:48:19,776 INFO inference instruct cost time 0.8134481906890869
+2025-04-16 14:48:19,776 INFO yield speech len 0.9984580498866213, rtf 0.8150368154612044
+2025-04-16 14:48:20,512 INFO inference instruct cost time 0.735173225402832
+2025-04-16 14:48:20,512 INFO yield speech len 0.9984580498866213, rtf 0.7365583474639543
+2025-04-16 14:48:21,408 INFO inference instruct cost time 0.8949966430664062
+2025-04-16 14:48:21,408 INFO yield speech len 0.9984580498866213, rtf 0.8965987371020885
+2025-04-16 14:48:21,678 INFO  encode text: 0.00541996955871582, embedding 2.47955322265625e-05, prompt speech 7.939338684082031e-05, decode 6.220303058624268
+2025-04-16 14:48:21,890 INFO inference instruct cost time 0.4808638095855713
+2025-04-16 14:48:21,890 INFO yield speech len 1.3815873015873017, rtf 0.34819199867984824
+2025-04-16 14:48:21,891 INFO instruct_text_norm: 0.0011453628540039062, frontend_instruct: 0.009421110153198242
+ 20%|██        | 1/5 [00:06<00:25,  6.45s/it]2025-04-16 14:48:21,891 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:48:21,892 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:48:21,892 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:48:23,218 INFO inference instruct cost time 1.3259339332580566
+2025-04-16 14:48:23,218 INFO yield speech len 0.7662585034013606, rtf 1.7306535589424046
+2025-04-16 14:48:24,047 INFO inference instruct cost time 0.8279697895050049
+2025-04-16 14:48:24,047 INFO yield speech len 0.9984580498866213, rtf 0.82946908822673
+2025-04-16 14:48:24,869 INFO inference instruct cost time 0.8209261894226074
+2025-04-16 14:48:24,869 INFO yield speech len 0.9984580498866213, rtf 0.8225196766732044
+2025-04-16 14:48:25,613 INFO inference instruct cost time 0.7427668571472168
+2025-04-16 14:48:25,613 INFO yield speech len 0.9984580498866213, rtf 0.744168720814551
+2025-04-16 14:48:26,422 INFO inference instruct cost time 0.8068878650665283
+2025-04-16 14:48:26,422 INFO yield speech len 0.9984580498866213, rtf 0.8083488754278352
+2025-04-16 14:48:27,207 INFO inference instruct cost time 0.7839260101318359
+2025-04-16 14:48:27,207 INFO yield speech len 0.9984580498866213, rtf 0.7854988912207096
+2025-04-16 14:48:28,072 INFO inference instruct cost time 0.8643999099731445
+2025-04-16 14:48:28,073 INFO yield speech len 0.9984580498866213, rtf 0.866269473484609
+2025-04-16 14:48:28,894 INFO inference instruct cost time 0.8201999664306641
+2025-04-16 14:48:28,894 INFO yield speech len 0.9984580498866213, rtf 0.8219690343668294
+2025-04-16 14:48:29,627 INFO  encode text: 0.005370378494262695, embedding 2.2172927856445312e-05, prompt speech 6.723403930664062e-05, decode 7.728268146514893
+2025-04-16 14:48:29,689 INFO inference instruct cost time 0.7939715385437012
+2025-04-16 14:48:29,689 INFO yield speech len 0.9984580498866213, rtf 0.7955396363814903
+2025-04-16 14:48:29,884 INFO inference instruct cost time 0.19404292106628418
+2025-04-16 14:48:29,884 INFO yield speech len 0.7662585034013606, rtf 0.25350902314213186
+2025-04-16 14:48:29,885 INFO instruct_text_norm: 0.0011453628540039062, frontend_instruct: 0.0010848045349121094
+ 40%|████      | 2/5 [00:14<00:22,  7.36s/it]2025-04-16 14:48:29,885 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:48:29,886 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:48:29,886 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:48:31,043 INFO inference instruct cost time 1.157193899154663
+2025-04-16 14:48:31,044 INFO yield speech len 0.7662585034013606, rtf 1.5109011204913259
+2025-04-16 14:48:31,940 INFO inference instruct cost time 0.8951220512390137
+2025-04-16 14:48:31,940 INFO yield speech len 0.9984580498866213, rtf 0.8968692825197481
+2025-04-16 14:48:32,833 INFO inference instruct cost time 0.8922805786132812
+2025-04-16 14:48:32,833 INFO yield speech len 0.9984580498866213, rtf 0.8940184071963263
+2025-04-16 14:48:33,647 INFO inference instruct cost time 0.8132576942443848
+2025-04-16 14:48:33,648 INFO yield speech len 0.9984580498866213, rtf 0.8150774092131922
+2025-04-16 14:48:34,428 INFO inference instruct cost time 0.7792801856994629
+2025-04-16 14:48:34,428 INFO yield speech len 0.9984580498866213, rtf 0.7806823231539753
+2025-04-16 14:48:35,213 INFO inference instruct cost time 0.7843751907348633
+2025-04-16 14:48:35,213 INFO yield speech len 0.9984580498866213, rtf 0.7858308048399035
+2025-04-16 14:48:36,133 INFO inference instruct cost time 0.9193265438079834
+2025-04-16 14:48:36,133 INFO yield speech len 0.9984580498866213, rtf 0.9209800609062577
+2025-04-16 14:48:36,965 INFO inference instruct cost time 0.8297886848449707
+2025-04-16 14:48:36,965 INFO yield speech len 0.9984580498866213, rtf 0.8312993888678245
+2025-04-16 14:48:37,777 INFO inference instruct cost time 0.811964750289917
+2025-04-16 14:48:37,778 INFO yield speech len 0.9984580498866213, rtf 0.8134350337651233
+2025-04-16 14:48:38,657 INFO inference instruct cost time 0.8789827823638916
+2025-04-16 14:48:38,657 INFO yield speech len 0.9984580498866213, rtf 0.8806040824585876
+2025-04-16 14:48:39,432 INFO inference instruct cost time 0.7729861736297607
+2025-04-16 14:48:39,432 INFO yield speech len 0.9984580498866213, rtf 0.7744108272586451
+2025-04-16 14:48:40,270 INFO inference instruct cost time 0.8348639011383057
+2025-04-16 14:48:40,271 INFO yield speech len 0.9984580498866213, rtf 0.8363437595192429
+2025-04-16 14:48:40,421 INFO  encode text: 0.005462169647216797, embedding 2.193450927734375e-05, prompt speech 7.367134094238281e-05, decode 10.527796983718872
+2025-04-16 14:48:40,614 INFO inference instruct cost time 0.3428313732147217
+2025-04-16 14:48:40,614 INFO yield speech len 1.1261678004535147, rtf 0.30459532389398086
+2025-04-16 14:48:40,615 INFO instruct_text_norm: 0.0011453628540039062, frontend_instruct: 0.001032114028930664
+ 60%|██████    | 3/5 [00:25<00:17,  8.90s/it]2025-04-16 14:48:40,615 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:48:40,616 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:48:40,616 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 14:48:41,805 INFO inference instruct cost time 1.1885402202606201
+2025-04-16 14:48:41,805 INFO yield speech len 0.7662585034013606, rtf 1.5513769118115306
+2025-04-16 14:48:42,655 INFO inference instruct cost time 0.8498189449310303
+2025-04-16 14:48:42,655 INFO yield speech len 0.9984580498866213, rtf 0.8513536574968764
+2025-04-16 14:48:43,416 INFO inference instruct cost time 0.759838342666626
+2025-04-16 14:48:43,416 INFO yield speech len 0.9984580498866213, rtf 0.7612431692609261
+2025-04-16 14:48:44,217 INFO inference instruct cost time 0.8004539012908936
+2025-04-16 14:48:44,217 INFO yield speech len 0.9984580498866213, rtf 0.8019212129807403
+2025-04-16 14:48:45,001 INFO inference instruct cost time 0.7833905220031738
+2025-04-16 14:48:45,002 INFO yield speech len 0.9984580498866213, rtf 0.7848109465179055
+2025-04-16 14:48:45,895 INFO inference instruct cost time 0.8926048278808594
+2025-04-16 14:48:45,895 INFO yield speech len 0.9984580498866213, rtf 0.8941996463596128
+2025-04-16 14:48:46,643 INFO inference instruct cost time 0.7475202083587646
+2025-04-16 14:48:46,644 INFO yield speech len 0.9984580498866213, rtf 0.7490053469705027
+2025-04-16 14:48:47,454 INFO inference instruct cost time 0.8096849918365479
+2025-04-16 14:48:47,454 INFO yield speech len 0.9984580498866213, rtf 0.8111911544273066
+2025-04-16 14:48:48,293 INFO inference instruct cost time 0.8382656574249268
+2025-04-16 14:48:48,293 INFO yield speech len 0.9984580498866213, rtf 0.8397861096878038
+2025-04-16 14:48:49,071 INFO inference instruct cost time 0.7771062850952148
+2025-04-16 14:48:49,071 INFO yield speech len 0.9984580498866213, rtf 0.7785382566886933
+2025-04-16 14:48:49,869 INFO inference instruct cost time 0.7968366146087646
+2025-04-16 14:48:49,869 INFO yield speech len 0.9984580498866213, rtf 0.7986292984813105
+2025-04-16 14:48:50,693 INFO inference instruct cost time 0.8225424289703369
+2025-04-16 14:48:50,693 INFO yield speech len 0.9984580498866213, rtf 0.8240066019298379
+2025-04-16 14:48:51,201 INFO  encode text: 0.005364656448364258, embedding 2.193450927734375e-05, prompt speech 7.367134094238281e-05, decode 10.578694343566895
+2025-04-16 14:48:51,308 INFO inference instruct cost time 0.6149635314941406
+2025-04-16 14:48:51,309 INFO yield speech len 0.9984580498866213, rtf 0.6161233713460523
+2025-04-16 14:48:51,501 INFO inference instruct cost time 0.19240951538085938
+2025-04-16 14:48:51,502 INFO yield speech len 0.6501587301587302, rtf 0.2963083446957171
+2025-04-16 14:48:51,502 INFO instruct_text_norm: 0.0011453628540039062, frontend_instruct: 0.0010800361633300781
+ 80%|████████  | 4/5 [00:36<00:09,  9.68s/it]2025-04-16 14:48:51,502 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:48:51,503 INFO instruct_text 高兴<endofprompt>
+2025-04-16 14:48:51,504 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 14:48:52,779 INFO inference instruct cost time 1.2747738361358643
+2025-04-16 14:48:52,779 INFO yield speech len 0.7662585034013606, rtf 1.6639503036541017
+2025-04-16 14:48:53,646 INFO inference instruct cost time 0.8654561042785645
+2025-04-16 14:48:53,646 INFO yield speech len 0.9984580498866213, rtf 0.8670025488881524
+2025-04-16 14:48:54,405 INFO inference instruct cost time 0.7588870525360107
+2025-04-16 14:48:54,406 INFO yield speech len 0.9984580498866213, rtf 0.7603044984429035
+2025-04-16 14:48:55,210 INFO inference instruct cost time 0.803290843963623
+2025-04-16 14:48:55,210 INFO yield speech len 0.9984580498866213, rtf 0.8047503587075098
+2025-04-16 14:48:56,068 INFO inference instruct cost time 0.85752272605896
+2025-04-16 14:48:56,068 INFO yield speech len 0.9984580498866213, rtf 0.8590987065893619
+2025-04-16 14:48:56,890 INFO inference instruct cost time 0.8217103481292725
+2025-04-16 14:48:56,891 INFO yield speech len 0.9984580498866213, rtf 0.8233902932599533
+2025-04-16 14:48:57,674 INFO inference instruct cost time 0.7826528549194336
+2025-04-16 14:48:57,675 INFO yield speech len 0.9984580498866213, rtf 0.7840750056730453
+2025-04-16 14:48:58,400 INFO inference instruct cost time 0.7250735759735107
+2025-04-16 14:48:58,401 INFO yield speech len 0.9984580498866213, rtf 0.726500409655273
+2025-04-16 14:48:58,636 INFO  encode text: 0.005333423614501953, embedding 1.9788742065429688e-05, prompt speech 0.00017976760864257812, decode 7.125148773193359
+2025-04-16 14:48:58,788 INFO inference instruct cost time 0.38626575469970703
+2025-04-16 14:48:58,788 INFO yield speech len 1.18421768707483, rtf 0.3263626179164823
+2025-04-16 14:48:58,789 INFO instruct_text_norm: 0.0011453628540039062, frontend_instruct: 0.0013942718505859375
+100%|██████████| 5/5 [00:43<00:00,  8.82s/it]100%|██████████| 5/5 [00:43<00:00,  8.67s/it]
+2025-04-16 15:02:05,631 INFO get instruct inference request
+2025-04-16 15:02:05,632 INFO inference instruct 1.2159347534179688e-05
+2025-04-16 15:02:05,632 INFO send inference response
+cost time: 0.3482654094696045
+cost time: 0.33426761627197266
+cost time: 0.33716535568237305
+cost time: 0.3094208240509033
+cost time: 0.3802342414855957
+cost time: 0.3117091655731201
+cost time: 0.411057710647583
+lock 6.794929504394531e-05, llm 6.230046987533569, stream 6.230034589767456, remain 0.20925307273864746
+cost time: 0.3877711296081543
+cost time: 0.37435388565063477
+cost time: 0.3574049472808838
+cost time: 0.29927921295166016
+cost time: 0.33331942558288574
+cost time: 0.3404276371002197
+cost time: 0.3604247570037842
+cost time: 0.36626482009887695
+cost time: 0.259859561920166
+lock 4.9114227294921875e-05, llm 7.797574043273926, stream 7.797566175460815, remain 0.19469761848449707
+cost time: 0.2800259590148926
+cost time: 0.3405482769012451
+cost time: 0.3376154899597168
+cost time: 0.3194005489349365
+cost time: 0.2958681583404541
+cost time: 0.2905290126800537
+cost time: 0.41522955894470215
+cost time: 0.39644527435302734
+cost time: 0.36831140518188477
+cost time: 0.4051520824432373
+cost time: 0.33968257904052734
+cost time: 0.36127614974975586
+lock 5.555152893066406e-05, llm 10.535784006118774, stream 10.53576374053955, remain 0.19231081008911133
+cost time: 0.3209950923919678
+cost time: 0.35576415061950684
+cost time: 0.32647252082824707
+cost time: 0.30675172805786133
+cost time: 0.28946852684020996
+cost time: 0.3989415168762207
+cost time: 0.29410219192504883
+cost time: 0.3159329891204834
+cost time: 0.37479519844055176
+cost time: 0.34377193450927734
+cost time: 0.35370659828186035
+cost time: 0.3793516159057617
+cost time: 0.16136741638183594
+lock 5.245208740234375e-05, llm 10.692491292953491, stream 10.692482471466064, remain 0.19303107261657715
+cost time: 0.38744258880615234
+cost time: 0.3909142017364502
+cost time: 0.2647547721862793
+cost time: 0.2694106101989746
+cost time: 0.31337499618530273
+cost time: 0.3278343677520752
+cost time: 0.2986907958984375
+cost time: 0.26126766204833984
+lock 5.6743621826171875e-05, llm 7.139119386672974, stream 7.139103651046753, remain 0.14539480209350586
+  0%|          | 0/6 [00:00<?, ?it/s]2025-04-16 15:02:05,737 INFO instruct_text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 15:02:05,740 INFO instruct_text 高兴<endofprompt>
+2025-04-16 15:02:05,741 INFO synthesis text 让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。真是太厉害了，想想就高兴，哈哈哈!
+2025-04-16 15:02:06,950 INFO inference instruct cost time 1.208956241607666
+2025-04-16 15:02:06,950 INFO yield speech len 0.7662585034013606, rtf 1.5783156564628535
+2025-04-16 15:02:07,758 INFO inference instruct cost time 0.8064639568328857
+2025-04-16 15:02:07,758 INFO yield speech len 0.9984580498866213, rtf 0.8079032993030756
+2025-04-16 15:02:08,538 INFO inference instruct cost time 0.7798409461975098
+2025-04-16 15:02:08,538 INFO yield speech len 0.9984580498866213, rtf 0.7812883639924748
+2025-04-16 15:02:09,391 INFO inference instruct cost time 0.8516101837158203
+2025-04-16 15:02:09,391 INFO yield speech len 0.9984580498866213, rtf 0.8531249778042006
+2025-04-16 15:02:10,201 INFO inference instruct cost time 0.8099269866943359
+2025-04-16 15:02:10,202 INFO yield speech len 0.9984580498866213, rtf 0.8114151364235683
+2025-04-16 15:02:10,987 INFO inference instruct cost time 0.7844460010528564
+2025-04-16 15:02:10,987 INFO yield speech len 0.9984580498866213, rtf 0.7858878748794628
+2025-04-16 15:02:11,370 INFO  encode text: 0.005281686782836914, embedding 2.09808349609375e-05, prompt speech 6.723403930664062e-05, decode 5.623324394226074
+2025-04-16 15:02:11,567 INFO inference instruct cost time 0.5793952941894531
+2025-04-16 15:02:11,567 INFO yield speech len 1.4628571428571429, rtf 0.39619666058570147
+2025-04-16 15:02:11,568 INFO instruct_text_norm: 0.0010538101196289062, frontend_instruct: 0.003465414047241211
+ 17%|█▋        | 1/6 [00:05<00:29,  5.83s/it]2025-04-16 15:02:11,568 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:11,569 INFO instruct_text 高兴<endofprompt>
+2025-04-16 15:02:11,569 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:12,823 INFO inference instruct cost time 1.253523349761963
+2025-04-16 15:02:12,823 INFO yield speech len 0.7662585034013606, rtf 1.636237115599215
+2025-04-16 15:02:13,672 INFO inference instruct cost time 0.8484396934509277
+2025-04-16 15:02:13,672 INFO yield speech len 0.9984580498866213, rtf 0.8499627245243552
+2025-04-16 15:02:14,404 INFO inference instruct cost time 0.7319772243499756
+2025-04-16 15:02:14,405 INFO yield speech len 0.9984580498866213, rtf 0.7333332932619161
+2025-04-16 15:02:15,176 INFO inference instruct cost time 0.7706339359283447
+2025-04-16 15:02:15,176 INFO yield speech len 0.9984580498866213, rtf 0.7720592550846727
+2025-04-16 15:02:15,972 INFO inference instruct cost time 0.7944152355194092
+2025-04-16 15:02:15,972 INFO yield speech len 0.9984580498866213, rtf 0.7963863742905993
+2025-04-16 15:02:16,709 INFO inference instruct cost time 0.7357525825500488
+2025-04-16 15:02:16,709 INFO yield speech len 0.9984580498866213, rtf 0.7371166309471741
+2025-04-16 15:02:17,560 INFO inference instruct cost time 0.8503820896148682
+2025-04-16 15:02:17,561 INFO yield speech len 0.9984580498866213, rtf 0.85200053087414
+2025-04-16 15:02:18,415 INFO inference instruct cost time 0.8528800010681152
+2025-04-16 15:02:18,415 INFO yield speech len 0.9984580498866213, rtf 0.854439260221498
+2025-04-16 15:02:19,253 INFO inference instruct cost time 0.8378336429595947
+2025-04-16 15:02:19,254 INFO yield speech len 0.9984580498866213, rtf 0.8396956094995487
+2025-04-16 15:02:19,489 INFO  encode text: 0.005536556243896484, embedding 2.288818359375e-05, prompt speech 7.510185241699219e-05, decode 7.911266803741455
+2025-04-16 15:02:19,649 INFO inference instruct cost time 0.39432692527770996
+2025-04-16 15:02:19,650 INFO yield speech len 1.207437641723356, rtf 0.3267607015844148
+2025-04-16 15:02:19,650 INFO instruct_text_norm: 0.0010538101196289062, frontend_instruct: 0.0011622905731201172
+ 33%|███▎      | 2/6 [00:13<00:28,  7.16s/it]2025-04-16 15:02:19,650 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:19,651 INFO instruct_text 高兴<endofprompt>
+2025-04-16 15:02:19,651 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:20,937 INFO inference instruct cost time 1.2856807708740234
+2025-04-16 15:02:20,937 INFO yield speech len 0.7662585034013606, rtf 1.678170938976109
+2025-04-16 15:02:21,733 INFO inference instruct cost time 0.7950150966644287
+2025-04-16 15:02:21,733 INFO yield speech len 0.9984580498866213, rtf 0.7964367583004195
+2025-04-16 15:02:22,511 INFO inference instruct cost time 0.7772922515869141
+2025-04-16 15:02:22,511 INFO yield speech len 0.9984580498866213, rtf 0.7786982438288802
+2025-04-16 15:02:23,377 INFO inference instruct cost time 0.8646194934844971
+2025-04-16 15:02:23,377 INFO yield speech len 0.9984580498866213, rtf 0.8661553334054906
+2025-04-16 15:02:24,185 INFO inference instruct cost time 0.8077042102813721
+2025-04-16 15:02:24,185 INFO yield speech len 0.9984580498866213, rtf 0.8093988208836594
+2025-04-16 15:02:24,981 INFO inference instruct cost time 0.7947549819946289
+2025-04-16 15:02:24,982 INFO yield speech len 0.9984580498866213, rtf 0.7961824503835551
+2025-04-16 15:02:25,755 INFO inference instruct cost time 0.7729654312133789
+2025-04-16 15:02:25,755 INFO yield speech len 0.9984580498866213, rtf 0.7743793074041605
+2025-04-16 15:02:26,569 INFO inference instruct cost time 0.8127992153167725
+2025-04-16 15:02:26,569 INFO yield speech len 0.9984580498866213, rtf 0.8148121171046134
+2025-04-16 15:02:27,423 INFO inference instruct cost time 0.8525331020355225
+2025-04-16 15:02:27,423 INFO yield speech len 0.9984580498866213, rtf 0.8540538583643907
+2025-04-16 15:02:28,177 INFO inference instruct cost time 0.7531592845916748
+2025-04-16 15:02:28,177 INFO yield speech len 0.9984580498866213, rtf 0.7545177397036622
+2025-04-16 15:02:28,970 INFO inference instruct cost time 0.791691780090332
+2025-04-16 15:02:28,970 INFO yield speech len 0.9984580498866213, rtf 0.7931472316687537
+2025-04-16 15:02:29,646 INFO  encode text: 0.005675315856933594, embedding 2.2649765014648438e-05, prompt speech 7.081031799316406e-05, decode 9.987334489822388
+2025-04-16 15:02:29,720 INFO inference instruct cost time 0.7491757869720459
+2025-04-16 15:02:29,720 INFO yield speech len 0.9984580498866213, rtf 0.7507093294068824
+2025-04-16 15:02:29,911 INFO inference instruct cost time 0.1906728744506836
+2025-04-16 15:02:29,912 INFO yield speech len 0.7314285714285714, rtf 0.2611422445625067
+2025-04-16 15:02:29,912 INFO instruct_text_norm: 0.0010538101196289062, frontend_instruct: 0.0010592937469482422
+ 50%|█████     | 3/6 [00:24<00:25,  8.57s/it]2025-04-16 15:02:29,912 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:29,913 INFO instruct_text 高兴<endofprompt>
+2025-04-16 15:02:29,914 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:31,175 INFO inference instruct cost time 1.261521816253662
+2025-04-16 15:02:31,176 INFO yield speech len 0.7662585034013606, rtf 1.6465970463204112
+2025-04-16 15:02:31,990 INFO inference instruct cost time 0.8141398429870605
+2025-04-16 15:02:31,990 INFO yield speech len 0.9984580498866213, rtf 0.8155950989444242
+2025-04-16 15:02:32,817 INFO inference instruct cost time 0.8257138729095459
+2025-04-16 15:02:32,818 INFO yield speech len 0.9984580498866213, rtf 0.8273479452919821
+2025-04-16 15:02:33,608 INFO inference instruct cost time 0.7899165153503418
+2025-04-16 15:02:33,609 INFO yield speech len 0.9984580498866213, rtf 0.7913374666904294
+2025-04-16 15:02:34,443 INFO inference instruct cost time 0.8334577083587646
+2025-04-16 15:02:34,443 INFO yield speech len 0.9984580498866213, rtf 0.8350569375812315
+2025-04-16 15:02:35,266 INFO inference instruct cost time 0.8223814964294434
+2025-04-16 15:02:35,267 INFO yield speech len 0.9984580498866213, rtf 0.8238592704888
+2025-04-16 15:02:36,073 INFO inference instruct cost time 0.8056435585021973
+2025-04-16 15:02:36,073 INFO yield speech len 0.9984580498866213, rtf 0.8070993042269418
+2025-04-16 15:02:36,846 INFO inference instruct cost time 0.7720112800598145
+2025-04-16 15:02:36,846 INFO yield speech len 0.9984580498866213, rtf 0.7734076840109949
+2025-04-16 15:02:37,581 INFO inference instruct cost time 0.7350633144378662
+2025-04-16 15:02:37,582 INFO yield speech len 0.9984580498866213, rtf 0.7363966888163325
+2025-04-16 15:02:38,479 INFO inference instruct cost time 0.896270751953125
+2025-04-16 15:02:38,479 INFO yield speech len 0.9984580498866213, rtf 0.8978712318335161
+2025-04-16 15:02:39,288 INFO inference instruct cost time 0.8079867362976074
+2025-04-16 15:02:39,288 INFO yield speech len 0.9984580498866213, rtf 0.8094788144537529
+2025-04-16 15:02:40,024 INFO inference instruct cost time 0.7357714176177979
+2025-04-16 15:02:40,024 INFO yield speech len 0.9984580498866213, rtf 0.7370913195488757
+2025-04-16 15:02:40,216 INFO  encode text: 0.005416154861450195, embedding 2.1696090698242188e-05, prompt speech 0.00017952919006347656, decode 10.294902086257935
+2025-04-16 15:02:40,393 INFO inference instruct cost time 0.3677804470062256
+2025-04-16 15:02:40,393 INFO yield speech len 1.1609977324263039, rtf 0.3169281156733632
+2025-04-16 15:02:40,393 INFO instruct_text_norm: 0.0010538101196289062, frontend_instruct: 0.0015723705291748047
+ 67%|██████▋   | 4/6 [00:34<00:18,  9.33s/it]2025-04-16 15:02:40,394 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:40,394 INFO instruct_text 高兴<endofprompt>
+2025-04-16 15:02:40,395 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 15:02:41,531 INFO inference instruct cost time 1.1358256340026855
+2025-04-16 15:02:41,531 INFO yield speech len 0.7662585034013606, rtf 1.4825242571532726
+2025-04-16 15:02:42,433 INFO inference instruct cost time 0.9011495113372803
+2025-04-16 15:02:42,434 INFO yield speech len 0.9984580498866213, rtf 0.9034846313730922
+2025-04-16 15:02:43,243 INFO inference instruct cost time 0.8082501888275146
+2025-04-16 15:02:43,243 INFO yield speech len 0.9984580498866213, rtf 0.8097340775177229
+2025-04-16 15:02:44,071 INFO inference instruct cost time 0.8271129131317139
+2025-04-16 15:02:44,071 INFO yield speech len 0.9984580498866213, rtf 0.828624738185385
+2025-04-16 15:02:44,940 INFO inference instruct cost time 0.867530345916748
+2025-04-16 15:02:44,940 INFO yield speech len 0.9984580498866213, rtf 0.8691000519320369
+2025-04-16 15:02:45,717 INFO inference instruct cost time 0.7763769626617432
+2025-04-16 15:02:45,718 INFO yield speech len 0.9984580498866213, rtf 0.7778593858833923
+2025-04-16 15:02:46,507 INFO inference instruct cost time 0.788426399230957
+2025-04-16 15:02:46,507 INFO yield speech len 0.9984580498866213, rtf 0.7898381245214232
+2025-04-16 15:02:47,347 INFO inference instruct cost time 0.8390178680419922
+2025-04-16 15:02:47,347 INFO yield speech len 0.9984580498866213, rtf 0.8406837091802858
+2025-04-16 15:02:48,215 INFO inference instruct cost time 0.8666272163391113
+2025-04-16 15:02:48,215 INFO yield speech len 0.9984580498866213, rtf 0.8683099064889342
+2025-04-16 15:02:48,971 INFO inference instruct cost time 0.7547616958618164
+2025-04-16 15:02:48,971 INFO yield speech len 0.9984580498866213, rtf 0.7562573013697252
+2025-04-16 15:02:49,787 INFO inference instruct cost time 0.814918041229248
+2025-04-16 15:02:49,787 INFO yield speech len 0.9984580498866213, rtf 0.8164048249031916
+2025-04-16 15:02:50,623 INFO inference instruct cost time 0.8356304168701172
+2025-04-16 15:02:50,623 INFO yield speech len 0.9984580498866213, rtf 0.8370992808797678
+2025-04-16 15:02:51,010 INFO  encode text: 0.0052928924560546875, embedding 1.9550323486328125e-05, prompt speech 0.00010776519775390625, decode 10.608415126800537
+2025-04-16 15:02:51,163 INFO inference instruct cost time 0.5396902561187744
+2025-04-16 15:02:51,164 INFO yield speech len 1.4628571428571429, rtf 0.3690912155434489
+2025-04-16 15:02:51,164 INFO instruct_text_norm: 0.0010538101196289062, frontend_instruct: 0.0013451576232910156
+ 83%|████████▎ | 5/6 [00:45<00:09,  9.85s/it]2025-04-16 15:02:51,164 INFO instruct_text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 15:02:51,165 INFO instruct_text 高兴<endofprompt>
+2025-04-16 15:02:51,166 INFO synthesis text 真是太厉害了，想想就高兴，哈哈哈!哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！
+2025-04-16 15:02:52,340 INFO inference instruct cost time 1.1741836071014404
+2025-04-16 15:02:52,340 INFO yield speech len 0.7662585034013606, rtf 1.532612605528398
+2025-04-16 15:02:53,128 INFO inference instruct cost time 0.7874455451965332
+2025-04-16 15:02:53,128 INFO yield speech len 0.9984580498866213, rtf 0.7888507412010154
+2025-04-16 15:02:53,955 INFO inference instruct cost time 0.8262436389923096
+2025-04-16 15:02:53,955 INFO yield speech len 0.9984580498866213, rtf 0.8277443313408036
+2025-04-16 15:02:54,846 INFO inference instruct cost time 0.8898451328277588
+2025-04-16 15:02:54,846 INFO yield speech len 0.9984580498866213, rtf 0.8914361669963529
+2025-04-16 15:02:55,651 INFO inference instruct cost time 0.8047103881835938
+2025-04-16 15:02:55,652 INFO yield speech len 0.9984580498866213, rtf 0.8061589619014845
+2025-04-16 15:02:56,469 INFO inference instruct cost time 0.8161892890930176
+2025-04-16 15:02:56,469 INFO yield speech len 0.9984580498866213, rtf 0.8177059740477869
+2025-04-16 15:02:57,350 INFO inference instruct cost time 0.8809726238250732
+2025-04-16 15:02:57,351 INFO yield speech len 0.9984580498866213, rtf 0.8825277487292539
+2025-04-16 15:02:58,140 INFO inference instruct cost time 0.7889614105224609
+2025-04-16 15:02:58,140 INFO yield speech len 0.9984580498866213, rtf 0.7903675148046987
+2025-04-16 15:02:58,423 INFO  encode text: 0.005248546600341797, embedding 2.1696090698242188e-05, prompt speech 0.0005276203155517578, decode 7.248864650726318
+2025-04-16 15:02:58,619 INFO inference instruct cost time 0.4783296585083008
+2025-04-16 15:02:58,620 INFO yield speech len 1.3235374149659864, rtf 0.36157249522052315
+2025-04-16 15:02:58,621 INFO instruct_text_norm: 0.0010538101196289062, frontend_instruct: 0.0014867782592773438
+100%|██████████| 6/6 [00:52<00:00,  9.03s/it]100%|██████████| 6/6 [00:52<00:00,  8.81s/it]
+2025-04-16 21:50:48,811 INFO get instruct inference request
+2025-04-16 21:50:48,812 INFO inference instruct 9.059906005859375e-06
+2025-04-16 21:50:48,812 INFO send inference response
+cost time: 0.31971120834350586
+cost time: 0.3126380443572998
+cost time: 0.29587793350219727
+cost time: 0.3681044578552246
+cost time: 0.36623430252075195
+cost time: 0.3307681083679199
+lock 6.341934204101562e-05, llm 5.639463901519775, stream 5.639435529708862, remain 0.18706393241882324
+cost time: 0.3559839725494385
+cost time: 0.35454392433166504
+cost time: 0.2887721061706543
+cost time: 0.31699585914611816
+cost time: 0.34097719192504883
+cost time: 0.28218936920166016
+cost time: 0.3770124912261963
+cost time: 0.3891758918762207
+cost time: 0.3643207550048828
+lock 5.030632019042969e-05, llm 7.9274139404296875, stream 7.92738676071167, remain 0.1531352996826172
+cost time: 0.4073934555053711
+cost time: 0.35166430473327637
+cost time: 0.32387542724609375
+cost time: 0.3807706832885742
+cost time: 0.33397388458251953
+cost time: 0.33105921745300293
+cost time: 0.3095057010650635
+cost time: 0.31908226013183594
+cost time: 0.3788602352142334
+cost time: 0.3089895248413086
+cost time: 0.3180661201477051
+cost time: 0.2250685691833496
+lock 4.863739013671875e-05, llm 10.068472862243652, stream 10.06846570968628, remain 0.19141507148742676
+cost time: 0.373288631439209
+cost time: 0.36063647270202637
+cost time: 0.35173678398132324
+cost time: 0.2858126163482666
+cost time: 0.3492465019226074
+cost time: 0.3382852077484131
+cost time: 0.35227465629577637
+cost time: 0.328596830368042
+cost time: 0.3014342784881592
+cost time: 0.40217113494873047
+cost time: 0.35469651222229004
+cost time: 0.2823646068572998
+lock 5.7220458984375e-05, llm 10.304303646087646, stream 10.304281949996948, remain 0.17464804649353027
+cost time: 0.2585270404815674
+cost time: 0.4071626663208008
+cost time: 0.36437106132507324
+cost time: 0.36379265785217285
+cost time: 0.38373303413391113
+cost time: 0.3329935073852539
+cost time: 0.33471131324768066
+cost time: 0.3548269271850586
+cost time: 0.39259815216064453
+cost time: 0.30100369453430176
+cost time: 0.34118080139160156
+cost time: 0.3221726417541504
+lock 4.601478576660156e-05, llm 10.621246576309204, stream 10.62122106552124, remain 0.14742136001586914
+cost time: 0.2970395088195801
+cost time: 0.31348395347595215
+cost time: 0.36280250549316406
+cost time: 0.396012544631958
+cost time: 0.3612034320831299
+cost time: 0.34268951416015625
+cost time: 0.42325377464294434
+cost time: 0.3555128574371338
+lock 5.412101745605469e-05, llm 7.26684045791626, stream 7.266822814941406, remain 0.18723797798156738
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 21:50:48,824 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 21:50:48,831 INFO instruct_text 高兴<endofprompt>
+2025-04-16 21:50:48,832 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 21:50:49,969 INFO inference instruct cost time 1.1368231773376465
+2025-04-16 21:50:49,969 INFO yield speech len 0.7662585034013606, rtf 1.4838774328712712
+2025-04-16 21:50:50,702 INFO inference instruct cost time 0.7323496341705322
+2025-04-16 21:50:50,702 INFO yield speech len 0.9984580498866213, rtf 0.7336828771025635
+2025-04-16 21:50:51,421 INFO inference instruct cost time 0.7185463905334473
+2025-04-16 21:50:51,421 INFO yield speech len 0.9984580498866213, rtf 0.719857600322643
+2025-04-16 21:50:52,125 INFO inference instruct cost time 0.7031772136688232
+2025-04-16 21:50:52,125 INFO yield speech len 0.9984580498866213, rtf 0.7045212808216726
+2025-04-16 21:50:52,901 INFO inference instruct cost time 0.7751514911651611
+2025-04-16 21:50:52,901 INFO yield speech len 0.9984580498866213, rtf 0.7765630124743248
+2025-04-16 21:50:53,632 INFO inference instruct cost time 0.7298932075500488
+2025-04-16 21:50:53,632 INFO yield speech len 0.9984580498866213, rtf 0.731268981579951
+2025-04-16 21:50:54,355 INFO inference instruct cost time 0.7220895290374756
+2025-04-16 21:50:54,355 INFO yield speech len 0.9984580498866213, rtf 0.7233985694298564
+2025-04-16 21:50:55,055 INFO inference instruct cost time 0.6997699737548828
+2025-04-16 21:50:55,055 INFO yield speech len 0.9984580498866213, rtf 0.701107823853056
+2025-04-16 21:50:55,752 INFO inference instruct cost time 0.6961746215820312
+2025-04-16 21:50:55,752 INFO yield speech len 0.9984580498866213, rtf 0.6974503267989602
+2025-04-16 21:50:56,392 INFO  encode text: 0.005426168441772461, embedding 2.1696090698242188e-05, prompt speech 7.081031799316406e-05, decode 7.553863525390625
+2025-04-16 21:50:56,428 INFO inference instruct cost time 0.6748983860015869
+2025-04-16 21:50:56,428 INFO yield speech len 0.9984580498866213, rtf 0.676133353696313
+2025-04-16 21:50:56,576 INFO inference instruct cost time 0.14806580543518066
+2025-04-16 21:50:56,577 INFO yield speech len 0.7894784580498866, rtf 0.18781011184567914
+2025-04-16 21:50:56,577 INFO instruct_text_norm: 0.0009746551513671875, frontend_instruct: 0.007727384567260742
+100%|██████████| 1/1 [00:07<00:00,  7.75s/it]100%|██████████| 1/1 [00:07<00:00,  7.75s/it]
+2025-04-16 21:51:15,614 INFO get instruct inference request
+2025-04-16 21:51:15,615 INFO inference instruct 1.239776611328125e-05
+2025-04-16 21:51:15,615 INFO send inference response
+cost time: 0.3399217128753662
+cost time: 0.30882740020751953
+cost time: 0.29544615745544434
+cost time: 0.29013967514038086
+cost time: 0.35184717178344727
+cost time: 0.31694841384887695
+cost time: 0.28880786895751953
+cost time: 0.2765648365020752
+cost time: 0.27294230461120605
+cost time: 0.2414841651916504
+lock 5.817413330078125e-05, llm 7.596169471740723, stream 7.596162796020508, remain 0.14872431755065918
+  0%|          | 0/1 [00:00<?, ?it/s]2025-04-16 21:51:15,629 INFO instruct_text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 21:51:15,636 INFO instruct_text 高兴<endofprompt>
+2025-04-16 21:51:15,636 INFO synthesis text 哇咔咔，哇咔咔，瓦库，瓦库，阿尼亚，马上要凑够一百字了！让我想想[breath]<strong>loona</strong>修复版本发布了[laughter]。
+2025-04-16 21:51:16,810 INFO inference instruct cost time 1.1732134819030762
+2025-04-16 21:51:16,810 INFO yield speech len 0.7662585034013606, rtf 1.5314290046014567
+2025-04-16 21:51:17,623 INFO inference instruct cost time 0.8118329048156738
+2025-04-16 21:51:17,623 INFO yield speech len 0.9984580498866213, rtf 0.8133237591273216
+2025-04-16 21:51:18,347 INFO inference instruct cost time 0.7218747138977051
+2025-04-16 21:51:18,347 INFO yield speech len 0.9984580498866213, rtf 0.7232457458929613
+2025-04-16 21:51:19,100 INFO inference instruct cost time 0.752424955368042
+2025-04-16 21:51:19,100 INFO yield speech len 0.9984580498866213, rtf 0.7538742093412681
+2025-04-16 21:51:19,901 INFO inference instruct cost time 0.8000223636627197
+2025-04-16 21:51:19,901 INFO yield speech len 0.9984580498866213, rtf 0.8014885313419062
+2025-04-16 21:51:20,577 INFO inference instruct cost time 0.6748533248901367
+2025-04-16 21:51:20,577 INFO yield speech len 0.9984580498866213, rtf 0.6761185489161763
+2025-04-16 21:51:21,327 INFO inference instruct cost time 0.7496383190155029
+2025-04-16 21:51:21,327 INFO yield speech len 0.9984580498866213, rtf 0.7510214237236352
+2025-04-16 21:51:22,039 INFO inference instruct cost time 0.7105097770690918
+2025-04-16 21:51:22,039 INFO yield speech len 0.9984580498866213, rtf 0.7118377076505228
+2025-04-16 21:51:22,483 INFO  encode text: 0.005391120910644531, embedding 2.2411346435546875e-05, prompt speech 7.271766662597656e-05, decode 6.839459657669067
+2025-04-16 21:51:22,628 INFO inference instruct cost time 0.5885176658630371
+2025-04-16 21:51:22,628 INFO yield speech len 1.6021768707482993, rtf 0.3674791376713825
+2025-04-16 21:51:22,629 INFO instruct_text_norm: 0.001127004623413086, frontend_instruct: 0.007928848266601562
+100%|██████████| 1/1 [00:07<00:00,  7.00s/it]100%|██████████| 1/1 [00:07<00:00,  7.00s/it]

@@ -14,7 +14,7 @@ app = FastAPI()
 import os
 
 GRPC_SERVER = os.environ.get("GRPC_SERVER", "localhost:50000")
-
+# GRPC_SERVER=localhost:50000 python -m uvicorn app:app --host 0.0.0.0 --port 8080 &
 
 class SynthesizeRequest(BaseModel):
     tts_text: str

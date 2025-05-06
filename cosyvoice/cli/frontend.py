@@ -70,7 +70,7 @@ class CosyVoiceFrontEnd:
             self.en_tn_model = EnNormalizer()
             self.inflect_parser = inflect.engine()
 
-        self.loona_model_input = torch.load('model_input.pth')
+        # self.loona_model_input = torch.load('model_input.pth')
 
     def _extract_text_token(self, text):
         import logging
